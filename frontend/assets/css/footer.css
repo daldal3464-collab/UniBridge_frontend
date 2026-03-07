@@ -1,0 +1,64 @@
+/* ── Footer ── */
+.footerWrap {
+    width: 100%;
+    background: #F4F9FF;
+    border-top: 1px solid #e8e4df;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  .footerInner {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 28px;
+    gap: 60px;
+  }
+  
+  /* ── 로고 ── */
+  .footerLogo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #2c5f8a;
+    letter-spacing: -0.3px;
+    text-decoration: none;
+    flex-shrink: 0;
+    min-width: 140px;
+  }
+  
+  /* ── 구분선 ── */
+  .footerDivider {
+    width: 1px;
+    height: 80px;
+    background: #d0ccc7;
+    flex-shrink: 0;
+  }
+  
+  /* ── 정보 영역 ── */
+  .footerInfoWrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 48px;
+  }
+  
+  .footerInfoItem {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    color: #555;
+    letter-spacing: 0.1px;
+    white-space: nowrap;
+  }
+  
+  .footerInfoItem span {
+    color: #333;
+    font-weight: 500;
+  }
+
+  .footerLogo img {
+    height: 36px;
+    width: auto;
+  }
