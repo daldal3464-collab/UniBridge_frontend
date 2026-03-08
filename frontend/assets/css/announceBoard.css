@@ -1,0 +1,160 @@
+/* ── 공지사항 페이지 ── */
+.announceWrap {
+    max-width: 1144px;
+    margin: 0 auto;
+    padding: 40px 28px 60px;
+    padding-top: 96px; /* 헤더 56px + 여백 40px */
+  }
+  
+  .announceTitle {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2c5f8a;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-bottom: 28px;
+  }
+  
+  /* ── 목록 테이블 ── */
+  .announceList {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  
+  .announceList thead tr {
+    border-top: 2px solid #2c5f8a;
+    border-bottom: 1px solid #dde6f0;
+  }
+  
+  .announceList thead th {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    padding: 12px 8px;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: left;
+  }
+  
+  .announceList thead th:first-child { width: 60px; text-align: center; }
+  .announceList thead th.announceThCategory { width: 80px; }
+  .announceList thead th.announceThTitle { /* 남은 공간 자동으로 채움 */ }
+  .announceList thead th.announceThDate { width: 160px; }
+  .announceList thead th.announceThAuthor { width: 80px; }
+  .announceList thead th.announceThViews { width: 80px; }
+  
+  /* ── 행 ── */
+  .announceList tbody tr {
+    border-bottom: 1px solid #eef2f7;
+    cursor: pointer;
+    transition: background 0.12s;
+  }
+  
+  .announceList tbody tr:hover {
+    background: #f4f9ff;
+  }
+  
+  .announceList tbody td {
+    font-size: 13.5px;
+    color: #333;
+    padding: 13px 8px;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  /* 번호 */
+  .announceTdNum {
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+  }
+  
+  /* 카테고리 배지 */
+  .announceCategoryBadge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 20px;
+    letter-spacing: 0.2px;
+  }
+  
+  .announceCategoryBadge.contest {
+    background: #e8f0fe;
+    color: #2c5f8a;
+  }
+  
+  .announceCategoryBadge.announce {
+    background: #fff3cd;
+    color: #856404;
+  }
+  
+  /* 제목 */
+  .announceTdTitle {
+    font-weight: 500;
+    color: #1a1a1a;
+  }
+  
+  .announceTdTitle:hover {
+    color: #2c5f8a;
+    text-decoration: underline;
+  }
+  
+  /* 날짜 */
+  .announceTdDate {
+    color: #aaa;
+    font-size: 12.5px;
+  }
+  
+  /* 작성자 */
+  .announceTdAuthor {
+    color: #666;
+    font-size: 13px;
+  }
+  
+  /* 조회수 */
+  .announceTdViews {
+    color: #aaa;
+    font-size: 12.5px;
+  }
+  
+  /* ── 페이지네이션 ── */
+  .announcePaginationWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 32px;
+  }
+  
+  .announcePageBtn {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #dde6f0;
+    background: #fff;
+    font-size: 13px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  
+  .announcePageBtn:hover {
+    border-color: #2c5f8a;
+    color: #2c5f8a;
+    background: #f0f6ff;
+  }
+  
+  .announcePageBtn.active {
+    background: #2c5f8a;
+    color: #fff;
+    border-color: #2c5f8a;
+    font-weight: 600;
+  }
+  
+  .announcePageNext {
+    color: #2c5f8a;
+    font-size: 14px;
+  }

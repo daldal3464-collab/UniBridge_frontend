@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniBridge - 멘티 게시판</title>
+    <title>UniBridge - 멘토 게시판</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/frontend/assets/css/header.css" />
+    <link rel="stylesheet" href="/frontend/assets/css/user/mentor/mentorBoard/mentorBoardList.css" />
+    <style>
+        .pageContent,
+        .mentorBoardWrap {
+            align-self: stretch;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 헤더 (멘터 헤더) -->
+    <div id="headerContainer"></div>
+
+    <div class="pageContent">
+        <div class="mentorBoardWrap">
+
+            <h1 class="mentorBoardTitle">멘터전용 게시판</h1>
+
+            <table class="mentorBoardList">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th class="mentorBoardThTitle">제목</th>
+                        <th class="mentorBoardThDate">작성날짜 작성시간</th>
+                        <th class="mentorBoardThAuthor">작성자</th>
+                        <th class="mentorBoardThViews">조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr data-board-id="1">
+                        <td class="mentorBoardTdNum">1</td>
+                        <td class="mentorBoardTdTitle">게시글제목</td>
+                        <td class="mentorBoardTdDate">작성날짜 작성시간</td>
+                        <td class="mentorBoardTdAuthor">작성자1</td>
+                        <td class="mentorBoardTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-board-id="2">
+                        <td class="mentorBoardTdNum">2</td>
+                        <td class="mentorBoardTdTitle">게시글제목</td>
+                        <td class="mentorBoardTdDate">작성날짜 작성시간</td>
+                        <td class="mentorBoardTdAuthor">작성자1</td>
+                        <td class="mentorBoardTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-board-id="3">
+                        <td class="mentorBoardTdNum">3</td>
+                        <td class="mentorBoardTdTitle">게시글제목</td>
+                        <td class="mentorBoardTdDate">작성날짜 작성시간</td>
+                        <td class="mentorBoardTdAuthor">작성자1</td>
+                        <td class="mentorBoardTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-board-id="4">
+                        <td class="mentorBoardTdNum">4</td>
+                        <td class="mentorBoardTdTitle">게시글제목</td>
+                        <td class="mentorBoardTdDate">작성날짜 작성시간</td>
+                        <td class="mentorBoardTdAuthor">작성자1</td>
+                        <td class="mentorBoardTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-board-id="5">
+                        <td class="mentorBoardTdNum">5</td>
+                        <td class="mentorBoardTdTitle">게시글제목</td>
+                        <td class="mentorBoardTdDate">작성날짜 작성시간</td>
+                        <td class="mentorBoardTdAuthor">작성자1</td>
+                        <td class="mentorBoardTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-board-id="6">
+                        <td class="mentorBoardTdNum">6</td>
+                        <td class="mentorBoardTdTitle">게시글제목</td>
+                        <td class="mentorBoardTdDate">작성날짜 작성시간</td>
+                        <td class="mentorBoardTdAuthor">작성자1</td>
+                        <td class="mentorBoardTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-board-id="7">
+                        <td class="mentorBoardTdNum">7</td>
+                        <td class="mentorBoardTdTitle">게시글제목</td>
+                        <td class="mentorBoardTdDate">작성날짜 작성시간</td>
+                        <td class="mentorBoardTdAuthor">작성자1</td>
+                        <td class="mentorBoardTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-board-id="8">
+                        <td class="mentorBoardTdNum">8</td>
+                        <td class="mentorBoardTdTitle">게시글제목</td>
+                        <td class="mentorBoardTdDate">작성날짜 작성시간</td>
+                        <td class="mentorBoardTdAuthor">작성자1</td>
+                        <td class="mentorBoardTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-board-id="9">
+                        <td class="mentorBoardTdNum">9</td>
+                        <td class="mentorBoardTdTitle">게시글제목</td>
+                        <td class="mentorBoardTdDate">작성날짜 작성시간</td>
+                        <td class="mentorBoardTdAuthor">작성자1</td>
+                        <td class="mentorBoardTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-board-id="10">
+                        <td class="mentorBoardTdNum">10</td>
+                        <td class="mentorBoardTdTitle">게시글제목</td>
+                        <td class="mentorBoardTdDate">작성날짜 작성시간</td>
+                        <td class="mentorBoardTdAuthor">작성자3</td>
+                        <td class="mentorBoardTdViews">조회수 0</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <!-- 하단: 페이지네이션 + 글작성 -->
+            <div class="mentorBoardFooter">
+                <div class="mentorBoardPaginationWrap">
+                    <button class="mentorBoardPageBtn active" data-page="1">1</button>
+                    <button class="mentorBoardPageBtn" data-page="2">2</button>
+                    <button class="mentorBoardPageBtn" data-page="3">3</button>
+                    <button class="mentorBoardPageBtn" data-page="4">4</button>
+                    <button class="mentorBoardPageBtn" data-page="5">5</button>
+                    <button class="mentorBoardPageBtn mentorBoardPageNext">&#62;</button>
+                </div>
+                <button class="mentorBoardWriteBtn" id="mentorBoardWriteBtn">글작성</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footerContainer"></div>
+
+    <script src="./assets/js/mentorHeader.js"></script>
+    <script src="./assets/js/footerComponent.js"></script>
+    <script src="/frontend/assets/js/user/mentor/mentorBoard/mentorBoardList.js"></script>
+
+</body>
+
+</html>

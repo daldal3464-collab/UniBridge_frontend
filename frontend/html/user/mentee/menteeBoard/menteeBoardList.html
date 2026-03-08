@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UniBridge - 멘티 게시판</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/frontend/assets/css/header.css" />
+  <link rel="stylesheet" href="./assets/css/footer.css" />
+  <link rel="stylesheet" href="/frontend/assets/css/user/mentee/menteeBoard/menteeBoardList.css" />
+  <style>
+    .pageContent,
+    .menteeBoardWrap {
+      align-self: stretch;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 헤더 (멘티 헤더) -->
+  <div id="headerContainer"></div>
+
+  <div class="pageContent">
+    <div class="menteeBoardWrap">
+
+      <h1 class="menteeBoardTitle">멘티전용 게시판</h1>
+
+      <table class="menteeBoardList">
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th class="menteeBoardThTitle">제목</th>
+            <th class="menteeBoardThDate">작성날짜 작성시간</th>
+            <th class="menteeBoardThAuthor">작성자</th>
+            <th class="menteeBoardThViews">조회수</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr data-board-id="1">
+            <td class="menteeBoardTdNum">1</td>
+            <td class="menteeBoardTdTitle">게시글제목</td>
+            <td class="menteeBoardTdDate">작성날짜 작성시간</td>
+            <td class="menteeBoardTdAuthor">작성자1</td>
+            <td class="menteeBoardTdViews">조회수 0</td>
+          </tr>
+
+          <tr data-board-id="2">
+            <td class="menteeBoardTdNum">2</td>
+            <td class="menteeBoardTdTitle">게시글제목</td>
+            <td class="menteeBoardTdDate">작성날짜 작성시간</td>
+            <td class="menteeBoardTdAuthor">작성자1</td>
+            <td class="menteeBoardTdViews">조회수 0</td>
+          </tr>
+
+          <tr data-board-id="3">
+            <td class="menteeBoardTdNum">3</td>
+            <td class="menteeBoardTdTitle">게시글제목</td>
+            <td class="menteeBoardTdDate">작성날짜 작성시간</td>
+            <td class="menteeBoardTdAuthor">작성자1</td>
+            <td class="menteeBoardTdViews">조회수 0</td>
+          </tr>
+
+          <tr data-board-id="4">
+            <td class="menteeBoardTdNum">4</td>
+            <td class="menteeBoardTdTitle">게시글제목</td>
+            <td class="menteeBoardTdDate">작성날짜 작성시간</td>
+            <td class="menteeBoardTdAuthor">작성자1</td>
+            <td class="menteeBoardTdViews">조회수 0</td>
+          </tr>
+
+          <tr data-board-id="5">
+            <td class="menteeBoardTdNum">5</td>
+            <td class="menteeBoardTdTitle">게시글제목</td>
+            <td class="menteeBoardTdDate">작성날짜 작성시간</td>
+            <td class="menteeBoardTdAuthor">작성자1</td>
+            <td class="menteeBoardTdViews">조회수 0</td>
+          </tr>
+
+          <tr data-board-id="6">
+            <td class="menteeBoardTdNum">6</td>
+            <td class="menteeBoardTdTitle">게시글제목</td>
+            <td class="menteeBoardTdDate">작성날짜 작성시간</td>
+            <td class="menteeBoardTdAuthor">작성자1</td>
+            <td class="menteeBoardTdViews">조회수 0</td>
+          </tr>
+
+          <tr data-board-id="7">
+            <td class="menteeBoardTdNum">7</td>
+            <td class="menteeBoardTdTitle">게시글제목</td>
+            <td class="menteeBoardTdDate">작성날짜 작성시간</td>
+            <td class="menteeBoardTdAuthor">작성자1</td>
+            <td class="menteeBoardTdViews">조회수 0</td>
+          </tr>
+
+          <tr data-board-id="8">
+            <td class="menteeBoardTdNum">8</td>
+            <td class="menteeBoardTdTitle">게시글제목</td>
+            <td class="menteeBoardTdDate">작성날짜 작성시간</td>
+            <td class="menteeBoardTdAuthor">작성자1</td>
+            <td class="menteeBoardTdViews">조회수 0</td>
+          </tr>
+
+          <tr data-board-id="9">
+            <td class="menteeBoardTdNum">9</td>
+            <td class="menteeBoardTdTitle">게시글제목</td>
+            <td class="menteeBoardTdDate">작성날짜 작성시간</td>
+            <td class="menteeBoardTdAuthor">작성자1</td>
+            <td class="menteeBoardTdViews">조회수 0</td>
+          </tr>
+
+          <tr data-board-id="10">
+            <td class="menteeBoardTdNum">10</td>
+            <td class="menteeBoardTdTitle">게시글제목</td>
+            <td class="menteeBoardTdDate">작성날짜 작성시간</td>
+            <td class="menteeBoardTdAuthor">작성자3</td>
+            <td class="menteeBoardTdViews">조회수 0</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <!-- 하단: 페이지네이션 + 글작성 -->
+      <div class="menteeBoardFooter">
+        <div class="menteeBoardPaginationWrap">
+          <button class="menteeBoardPageBtn active" data-page="1">1</button>
+          <button class="menteeBoardPageBtn" data-page="2">2</button>
+          <button class="menteeBoardPageBtn" data-page="3">3</button>
+          <button class="menteeBoardPageBtn" data-page="4">4</button>
+          <button class="menteeBoardPageBtn" data-page="5">5</button>
+          <button class="menteeBoardPageBtn menteeBoardPageNext">&#62;</button>
+        </div>
+        <button class="menteeBoardWriteBtn" id="menteeBoardWriteBtn">글작성</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="footerContainer"></div>
+
+  <script src="./assets/js/menteeHeader.js"></script>
+  <script src="./assets/js/footerComponent.js"></script>
+  <script src="/frontend/assets/js/user/mentee/menteeBoard/menteeBoardList.js"></script>
+
+</body>
+
+</html>
