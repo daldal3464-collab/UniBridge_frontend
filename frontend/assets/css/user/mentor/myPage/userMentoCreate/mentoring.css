@@ -34,7 +34,6 @@ main{
 #contentsHeader{
   width : 100%;
   height : 180px;
-  background: red;
   display : flex;
   align-items: center;
 }
