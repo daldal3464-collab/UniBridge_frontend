@@ -1,0 +1,22 @@
+// footerComponent.js
+// 푸터 HTML을 직접 주입 — fetch 없이 동작
+
+const footerTemplate = `
+  <footer class="footerWrap">
+    <div class="footerInner">
+      <a href="#" class="footerLogo">UniBridge</a>
+      <div class="footerDivider"></div>
+      <div class="footerInfoWrap">
+        <p class="footerInfoItem"><span>전화번호 : </span>010-1234-5678</p>
+        <p class="footerInfoItem"><span>사업번호 : </span>111-22-3333</p>
+        <p class="footerInfoItem"><span>이메일 : </span>test@naver.com</p>
+        <p class="footerInfoItem"><span>주소 : </span>서울특별시 강남구 테헤란로 146 번악빌딩 3,4층</p>
+        <p class="footerInfoItem"><span>대표자 : </span>김재형</p>
+      </div>
+    </div>
+  </footer>`;
+
+function loadFooter() {
+  const mount = document.getElementById('footerMount');
+  if (mount) mount.innerHTML = footerTemplate;
+}
