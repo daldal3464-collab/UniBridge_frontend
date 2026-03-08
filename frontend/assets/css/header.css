@@ -1,4 +1,10 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 :root {
   --bg: #ffffff;
@@ -28,7 +34,7 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 
 .headerInner {
@@ -38,7 +44,7 @@ body {
   height: 56px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 15px;
   position: relative;
 }
 
@@ -74,13 +80,21 @@ body {
   white-space: nowrap;
 }
 
-.headerNav a:hover { background: #f0f4f8; color: var(--accent); }
+.headerNav a:hover {
+  background: #f0f4f8;
+  color: var(--accent);
+}
 
 /* ── Auth Area ── */
-.headerAuthGroup {
-  display: flex;
-  align-items: center;
+.headerWrap .headerAuthGroup {
+  display: flex !important;
+  flex-direction: row !important;
+  /* 가로 정렬 강제 */
+  align-items: center !important;
+  gap: 12px;
   flex-shrink: 0;
+  white-space: nowrap !important;
+  /* 텍스트 줄바꿈 절대 방지 */
 }
 
 .headerAuthState {
@@ -90,13 +104,16 @@ body {
   transition: opacity 0.18s;
 }
 
-.headerAuthState.hidden { display: none; }
+.headerAuthState.hidden {
+  display: none;
+}
 
-.headerDivider {
+.headerWrap .headerDivider {
   width: 1px;
-  height: 14px;
+  height: 12px;
   background: var(--border);
   flex-shrink: 0;
+  display: none !important;
 }
 
 /* 공통 텍스트 버튼 */
@@ -114,8 +131,14 @@ body {
   letter-spacing: 0.1px;
   transition: color 0.15s;
 }
-.headerBtnText:hover { color: var(--accent); }
-.headerBtnText.logout:hover { color: #c0392b; }
+
+.headerBtnText:hover {
+  color: var(--accent);
+}
+
+.headerBtnText.logout:hover {
+  color: #c0392b;
+}
 
 /* 로그인 버튼 (outline) */
 .headerBtnSignIn {
@@ -132,36 +155,72 @@ body {
   letter-spacing: 0.1px;
   transition: background 0.15s, color 0.15s;
 }
-.headerBtnSignIn:hover { background: var(--accent); color: #fff; }
+
+.headerBtnSignIn:hover {
+  background: var(--accent);
+  color: #fff;
+}
 
 /* ── 로그인 유저 정보 ── */
-.userInfoWrap {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.headerWrap .userInfoWrap {
+  display: flex !important;
+  align-items: center !important; /* 세로 중앙 정렬 핵심 */
+  justify-content: flex-start !important;
+  gap: 4px !important; /* 요소들 사이의 간격 통일 */
+  white-space: nowrap !important;
+  height: 100% !important;
 }
 
-.userName {
+.headerWrap .userName {
+  display: inline-block !important;
+  position: static !important; /* relative보다 static이 Flex 정렬에 더 정확함 */
   font-size: 13px;
   font-weight: 500;
-  color: var(--textNav);
-  letter-spacing: 0.1px;
+  color: #3d3d3d; /* var(--textNav) */
+  line-height: 1 !important; /* 높이 계산 오류 방지 */
+  margin: 0 !important;
+  padding: 0 !important
 }
 
-.userRoleBadge {
+
+
+/* 슬래시(/) 스타일 추가 */
+.headerWrap .userRoleDivider {
+  font-size: 12px;
+  color: #ddd;
+  line-height: 1;
+}
+
+.headerWrap .userRoleBadge {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  padding: 0 8px;
   font-size: 11px;
   font-weight: 500;
-  padding: 2px 7px;
   border-radius: 20px;
-  letter-spacing: 0.2px;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 /* 멘토 */
-.mentoRoleBadge  { background: #e8f0fe; color: #2c5f8a; }
+.mentoRoleBadge {
+  background: #e8f0fe;
+  color: #2c5f8a;
+}
+
 /* 멘티 */
-.mentiRoleBadge  { background: #e6f4ea; color: #276b3a; }
+.mentiRoleBadge {
+  background: #e6f4ea;
+  color: #276b3a;
+}
+
 /* 미정 */
-.userRoleBadge.pending { background: #f3f3f3; color: #888; }
+.userRoleBadge.pending {
+  background: #f3f3f3;
+  color: #888;
+}
 
 /* ── Demo Panel ── */
 .demoPanel {
@@ -188,7 +247,10 @@ body {
   border-radius: 4px;
   transition: background 0.15s;
 }
-.demoBtnToggle:hover { background: var(--accentHover); }
+
+.demoBtnToggle:hover {
+  background: var(--accentHover);
+}
 
 .demoBtnRole {
   font-size: 12px;
@@ -202,9 +264,13 @@ body {
   border-radius: 3px;
   transition: border-color 0.15s, color 0.15s;
 }
-.demoBtnRole:hover { border-color: var(--accent); color: var(--accent); }
+
+.demoBtnRole:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
 
 .headerLogo img {
-    height: 36px;
-    width: auto;
-  }
+  height: 36px;
+  width: auto;
+}

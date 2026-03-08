@@ -1,5 +1,5 @@
 // 상세보기 버튼 클릭 시 팝업 생성
-const detailButton = document.querySelector(
+const detailButton = document.querySelectorAll(
     ".list-container__inner " + 
     ".list-content-container " + 
     ".list-content " + 
@@ -9,10 +9,12 @@ const detailButton = document.querySelector(
     ".actions " + 
     ".detail"
 );
-detailButton.addEventListener('click', createDetailPopup);
+detailButton.forEach(function(item) {
+    item.addEventListener('click', createDetailPopup);
+})
 
 // 수정 버튼 클릭 시 팝업 생성
-const modifyButton = document.querySelector(
+const modifyButtons = document.querySelectorAll(
     ".list-container__inner " + 
     ".list-content-container " + 
     ".list-content " + 
@@ -22,7 +24,9 @@ const modifyButton = document.querySelector(
     ".actions " + 
     ".modify"
 );
-modifyButton.addEventListener('click', createModifyPopup);
+modifyButtons.forEach(function(item) {
+    item.addEventListener('click', createModifyPopup);
+})
 
 const writeButton = document.querySelector(
     ".main-container " +

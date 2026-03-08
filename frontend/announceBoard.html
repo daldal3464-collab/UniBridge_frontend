@@ -1,11 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniBridge - 공지사항</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/frontend/assets/css/header.css" />
+    <link rel="stylesheet" href="/frontend/assets/css/footer.css" />
+    <link rel="stylesheet" href="/frontend/assets/css/announceBoard.css" />
 </head>
+
 <body>
-    
+
+    <!-- 헤더 -->
+    <div id="headerContainer"></div>
+
+    <!-- 공지사항 본문 -->
+    <div class="pageContent">
+        <div class="announceWrap">
+
+            <h1 class="announceTitle">공지사항</h1>
+
+            <table class="announceList">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th class="announceThCategory">분류</th>
+                        <th class="announceThTitle">제목</th>
+                        <th class="announceThDate">작성날짜 작성시간</th>
+                        <th class="announceThAuthor">작성자</th>
+                        <th class="announceThViews">조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr data-announce-id="1">
+                        <td class="announceTdNum">1</td>
+                        <td><span class="announceCategoryBadge contest">대회</span></td>
+                        <td class="announceTdTitle">게시글제목</td>
+                        <td class="announceTdDate">작성날짜 작성시간</td>
+                        <td class="announceTdAuthor">관리자</td>
+                        <td class="announceTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-announce-id="2">
+                        <td class="announceTdNum">2</td>
+                        <td><span class="announceCategoryBadge announce">공지</span></td>
+                        <td class="announceTdTitle">게시글제목</td>
+                        <td class="announceTdDate">작성날짜 작성시간</td>
+                        <td class="announceTdAuthor">관리자</td>
+                        <td class="announceTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-announce-id="3">
+                        <td class="announceTdNum">3</td>
+                        <td><span class="announceCategoryBadge announce">공지</span></td>
+                        <td class="announceTdTitle">게시글제목</td>
+                        <td class="announceTdDate">작성날짜 작성시간</td>
+                        <td class="announceTdAuthor">관리자</td>
+                        <td class="announceTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-announce-id="4">
+                        <td class="announceTdNum">4</td>
+                        <td><span class="announceCategoryBadge announce">공지</span></td>
+                        <td class="announceTdTitle">게시글제목</td>
+                        <td class="announceTdDate">작성날짜 작성시간</td>
+                        <td class="announceTdAuthor">관리자</td>
+                        <td class="announceTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-announce-id="5">
+                        <td class="announceTdNum">5</td>
+                        <td><span class="announceCategoryBadge announce">공지</span></td>
+                        <td class="announceTdTitle">게시글제목</td>
+                        <td class="announceTdDate">작성날짜 작성시간</td>
+                        <td class="announceTdAuthor">관리자</td>
+                        <td class="announceTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-announce-id="6">
+                        <td class="announceTdNum">6</td>
+                        <td><span class="announceCategoryBadge contest">대회</span></td>
+                        <td class="announceTdTitle">게시글제목</td>
+                        <td class="announceTdDate">작성날짜 작성시간</td>
+                        <td class="announceTdAuthor">관리자</td>
+                        <td class="announceTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-announce-id="7">
+                        <td class="announceTdNum">7</td>
+                        <td><span class="announceCategoryBadge contest">대회</span></td>
+                        <td class="announceTdTitle">게시글제목</td>
+                        <td class="announceTdDate">작성날짜 작성시간</td>
+                        <td class="announceTdAuthor">관리자</td>
+                        <td class="announceTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-announce-id="8">
+                        <td class="announceTdNum">8</td>
+                        <td><span class="announceCategoryBadge contest">대회</span></td>
+                        <td class="announceTdTitle">게시글제목</td>
+                        <td class="announceTdDate">작성날짜 작성시간</td>
+                        <td class="announceTdAuthor">관리자</td>
+                        <td class="announceTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-announce-id="9">
+                        <td class="announceTdNum">9</td>
+                        <td><span class="announceCategoryBadge contest">대회</span></td>
+                        <td class="announceTdTitle">게시글제목</td>
+                        <td class="announceTdDate">작성날짜 작성시간</td>
+                        <td class="announceTdAuthor">관리자</td>
+                        <td class="announceTdViews">조회수 0</td>
+                    </tr>
+
+                    <tr data-announce-id="10">
+                        <td class="announceTdNum">10</td>
+                        <td><span class="announceCategoryBadge contest">대회</span></td>
+                        <td class="announceTdTitle">게시글제목</td>
+                        <td class="announceTdDate">작성날짜 작성시간</td>
+                        <td class="announceTdAuthor">관리자</td>
+                        <td class="announceTdViews">조회수 0</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <!-- 페이지네이션 -->
+            <div class="announcePaginationWrap">
+                <button class="announcePageBtn active" data-page="1">1</button>
+                <button class="announcePageBtn" data-page="2">2</button>
+                <button class="announcePageBtn" data-page="3">3</button>
+                <button class="announcePageBtn" data-page="4">4</button>
+                <button class="announcePageBtn" data-page="5">5</button>
+                <button class="announcePageBtn announcePageNext">&#62;</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div id="footerContainer"></div>
+
+    <script src="/frontend/assets/js/headerComponent.js"></script>
+    <script src="/frontend/assets/js/announceBoard.js"></script>
+
 </body>
+
 </html>

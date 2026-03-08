@@ -20,6 +20,7 @@ body {
   min-height: 100vh;
   font-family: 'Noto Sans KR', sans-serif;
   background: #ffffff;
+  align-items: stretch
 }
 
 .mainWrap {
@@ -162,3 +163,4 @@ body {
   flex-shrink: 0;
   /* 푸터 높이가 찌그러지지 않게 방지 */
 }
+
