@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/UniBridge_frontend/frontend/assets/css/user/notice/report.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <header class="header-container">
+        </header>
+        
+        <div class="main-container">
+            <div class="filter-container">
+                <div class="filter-container__inner">
+                    <div class="filter-container__inner__left">
+                        <div class="filter-date-container">
+                            <div class="filter-date-placeholder filter-placeholder">기간 선택 · 전체</div>
+                            <div class="filter-date-selector"></div>
+                        </div>
+                        <div class="filter-subject-container">
+                            <div class="filter-subject-placeholder filter-placeholder">필터링할 과목명을 선택해주세요.</div>
+                            <div class="filter-subject-selector">▼</div>
+                        </div>
+                    </div>
+                    <div class="filter-container__inner__right">
+                        <div class="filter-apply-button">필터 적용</div>
+                        <div class="filter-create-container">새 학습 보고서 작성</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-container">
+                <aside class="nav-container">
+                    <div class="cur-status-container">
+                        <div class="cur-status-title-container">
+                            <div class="cur-status-title-container__inner">
+                                <span>전체 현황</span>
+                            </div>
+                        </div>
+                        <div class="cur-status-content-container">
+                            <div class="cur-status-content-container__inner">
+                                <div class="content-container">
+                                    <div class="status-title">
+                                        <div class="title">전체 학습일지</div>
+                                        <div class="value">128</div>
+                                    </div>
+                                    <div class="status-content">
+                                        <span>현재 등록된 멘토·멘티 학습일지 총 개수</span>
+                                    </div>
+                                </div>
+                                <div class="content-container">
+                                    <div class="status-title">
+                                        <div class="title">이번 주 작성 수</div>
+                                        <div class="value">16</div>
+                                    </div>
+                                    <div class="status-content">
+                                        <span>이번 주에 작성된 학습일지 개수</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                
+                <main class="list-container__inner">
+                    <div class="list-title-container">
+                        <div class="list-main-title">학습일지 목록</div>
+                        <div class="list-sub-title">멘토·멘티 학습일지를 날짜, 상태, 성취도 기준으로 확인할 수 있습니다.</div>
+                    </div>
+                    <ul class="list-content-container">
+                        <li class="list-content">
+                            <div class="list-content__title">
+                                <div class="list-content__date">
+                                    <span>3월 2주차</span>
+                                </div>
+                                <div class="list-content__subtitle">
+                                    <span class="date">2026.03.08 ~ 2026.03.15</span>
+                                    <span class="desc">이번 주에 작성된 학습보고서</span>
+                                </div>
+                            </div>
+                            <div class="list-content__body">
+                                <div class="list-content__body-title">
+                                    <span class="write-date">작성일</span>
+                                    <span class="report-name">학습일지명</span>
+                                    <span class="mentor-mentee-name">멘토/멘티</span>
+                                    <span class="subject-name">과목명</span>
+                                    <span class="week">주차</span>
+                                    <span class="session">회차</span>
+                                    <span class="actions">관리</span>
+                                </div>
+                                <ul class="list-content__body-content">
+                                    <li class="list-learning-content">
+                                        <div class="date">2026.03.08</div>
+                                        <div class="report-name">학습일지 1</div>
+                                        <div class="mentor-mentee-name">
+                                            <div class="mentor">멘토: 홍길동</div>
+                                            <div class="mentee">멘티: 김철수</div>
+                                        </div>
+                                        <div class="subject-name">웹 개발</div>
+                                        <div class="week">3월 2주차</div>
+                                        <div class="session">1회차</div>
+                                        <div class="actions">
+                                            <button>수정</button>
+                                            <button>삭제</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
