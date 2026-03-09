@@ -204,6 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if (!completeBtn.disabled) {
         // form.submit();
+        window.location.href = '/frontend/html/user/undetermined/myPage/myPage.html';
       }
     });
   }

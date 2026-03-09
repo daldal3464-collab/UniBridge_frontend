@@ -5,52 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>미정 유저 설문조사</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/css/header.css" />
-    <link rel="stylesheet" href="/assets/css/footer.css" />
-    <link rel="stylesheet" href="/assets/css/user/undetermined/myPage/userSurvey/userSurvey.css">
-    <script defer src="/assets/js/user/undetermined/myPage/userSurvey/userSurvey.js"></script>
+    <link rel="stylesheet" href="/frontend/assets/css/header.css" />
+    <link rel="stylesheet" href="/frontend/assets/css/footer.css" />
+    <link rel="stylesheet" href="/frontend/assets/css/user/undetermined/myPage/userSurvey/userSurvey.css">
+    <script defer src="/frontend/assets/js/user/undetermined/myPage/userSurvey/userSurvey.js"></script>
 </head>
 <body>
-    <header class="headerWrap">
-        <div class="headerInner">
+    
+    <div id="headerContainer"></div>
 
-            <!-- 로고 -->
-            <a href="/main.html" class="headerLogo">
-                <img src="/assets/img/UniBridge.png" alt="UniBridge" />
-            </a>
-
-            <nav class="headerNav">
-                <a href="#">멘토 검색</a>
-                <a href="#">게시판</a>
-                <a href="#">학습보고서</a>
-                <a href="./announceBoard.html">공지사항</a>
-            </nav>
-
-            <div class="headerAuthGroup">
-                <div class="userInfoWrap">
-                    <span class="userName">홍길동</span>/
-                    <span class="userRoleBadge pending">미정</span>
-                </div>
-                <div class="headerDivider"></div>
-                <a href="#" class="headerBtnText" id="headerBtnMypage">마이페이지</a>
-                <div class="headerDivider"></div>
-                <a href="#" class="headerBtnText logout" id="headerBtnLogout">로그아웃</a>
-            </div>
-
-        </div>
-    </header>
     <div class="main-container">
         <aside>
             <div class="myPageTitle">마이페이지</div>
             <ul>
-                <li><a href="../../myPage/myPage.html" >계정 관리</a></li>
-                <li><a href="userSurvey.html" class="active">설문 조사</a></li>
-                <li><a href="../../myPage/userDelete/userDelete.html">회원 탈퇴</a></li>
+                <li><a href="/frontend/html/user/undetermined/myPage/myPage.html" >계정 관리</a></li>
+                <li><a href="/frontend/html/user/undetermined/myPage/userSurvey/userSurvey.html" class="active">설문 조사</a></li>
+                <li><a href="/frontend/html/user/undetermined/myPage/userDelete/userDelete.html">회원 탈퇴</a></li>
             </ul>
         </aside>
         <main>
             <div class="userManage-title">
-                <img src="/assets/img/user/userMyPageImg/userManage.jpg" alt="프로필 아이콘">
+                <img src="/frontend/assets/img/user/userMyPageImg/userManage.jpg" alt="프로필 아이콘">
                 <div class="title">설문조사</div>
             </div>
             <div class="userTypeBox">
@@ -62,7 +37,7 @@
             <button id="userWriteBtn">작성</button>
             <div id="surveyModal" class="modal">
                 <div class="modal-content">
-                    <button class="closeBtn"><img src="/assets/img/user/userProfile/close.png" alt=""></button>
+                    <button class="closeBtn"><img src="/frontend/assets/img/user/userProfile/close.png" alt=""></button>
                     <div class="surveyTitle">설문 조사</div>
                     <div class="modalBox">
                         <form>
@@ -155,7 +130,7 @@
                                         <label for="surveyFile" id="fileSelector" class="file-select-btn">파일 선택</label>
                                         
                                         <label for="surveyFile" id="fileInfoDisplay" class="file-info-active" style="display: none;">
-                                            <img src="../../../../../assets/img/user/file-icon.png" alt="파일" class="file-icon">
+                                            <img src="/frontend/assets/img/user/file-icon.png" alt="파일" class="file-icon">
                                             <span id="fileNameDisplay" class="file-name-text"></span>
                                         </label>
                                     </div>
@@ -175,7 +150,7 @@
 
     </div>
 
-    <script src="/assets/js/header.js"></script>
-    <script src="/assets/js/footer.js"></script>
+    <script src="/frontend/assets/js/header.js"></script>
+    <script src="/frontend/assets/js/footer.js"></script>
 </body>
 </html>

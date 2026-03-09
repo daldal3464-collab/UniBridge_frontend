@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 모든 조건 충족 시
         if (confirm('회원 정보를 수정하시겠습니까?')) {
-            window.location.href = '/html/user/mentor/myPage/userManage/userModify.html'; 
+            window.location.href = '/frontend/html/user/mentor/myPage/userManage/userModify.html'; 
         }
     });
 });

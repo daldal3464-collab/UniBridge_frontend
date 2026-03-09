@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
             loginError.textContent = "";
             if(confirm("정말로 탈퇴하시겠습니까?")) {
                 alert("탈퇴 신청이 완료되었습니다.");
+                window.location.href = '/frontend/main.html'; 
             }
         } else {
             loginError.textContent = "정보가 맞지 않습니다. 다시 확인해주세요.";

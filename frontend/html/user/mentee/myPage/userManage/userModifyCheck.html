@@ -4,54 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>멘티 인증</title>
-    <link rel="stylesheet" href="../../../../../assets/css/user/mentee/myPage/userManage/userModifyCheck.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Noto+Sans+KR:wght@300;400;500&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="../../../../../assets/css/header.css" />
-    <script defer src="../../../../../assets/js/user/mentee/myPage/userManage/userModifyCheck.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/frontend/assets/css/header.css" />
+    <link rel="stylesheet" href="/frontend/assets/css/footer.css" />
+    <link rel="stylesheet" href="/frontend/assets/css/user/mentee/myPage/userManage/userModifyCheck.css">
+    <script defer src="/frontend/assets/js/user/mentee/myPage/userManage/userModifyCheck.js"></script>
 </head>
 <body>
-    <header class="headerWrap">
-        <div class="headerInner">
-            <a href="#" class="headerLogo">
-                <img src="../../../../../assets/img/UniBridge.png" alt="UniBridge" />
-            </a>
+    
+    <div id="headerContainer"></div>
 
-            <nav class="headerNav">
-                <a href="#">멘토 검색</a>
-                <a href="#">게시판</a>
-                <a href="#">학습보고서</a>
-                <a href="#">공지사항</a>
-            </nav>
-
-            <div class="headerAuthGroup">
-                <div class="userInfoWrap">
-                    <span class="userName">홍길동</span>
-                    <span class="userRoleDivider">/</span>
-                    <span class="userRoleBadge mentiRoleBadge">멘티</span>
-                </div>
-                <div class="headerDivider"></div>
-                <a href="#" class="headerBtnText" id="headerBtnMypage">마이페이지</a>
-                <div class="headerDivider"></div>
-                <a href="#" class="headerBtnText logout" id="headerBtnLogout">로그아웃</a>
-            </div>
-        </div>
-    </header>
     <div class="main-container">
         <aside>
             <div class="myPageTitle">마이페이지</div>
             <ul>
-                <li><a href="../../myPage/myPage.html" class="active">계정 관리</a></li>
-                <li><a href="../userSurvey/userSurvey.html">설문 조사</a></li>
-                <li><a href="../userPayLog/payLog.html">결제 정보</a></li>
-                <li><a href="userMatchin.html" >매칭 정보</a></li>
-                <li><a href="../userDelete/userDelete.html">회원탈퇴</a></li>
+                <li><a href="/frontend/html/user/mentee/myPage/myPage.html" class="active">계정 관리</a></li>
+                <li><a href="/frontend/html/user/mentee/myPage/userSurvey/userSurvey.html">설문 조사</a></li>
+                <li><a href="/frontend/html/user/mentee/myPage/userPayLog/payLog.html">결제 정보</a></li>
+                <li><a href="/frontend/html/user/mentee/myPage/userMatching/userMatching.html" >매칭 정보</a></li>
+                <li><a href="/frontend/html/user/mentee/myPage/userDelete/userDelete.html">회원탈퇴</a></li>
             </ul>
         </aside>
         <main>
             <div class="userManage-title">
-                <img src="../../../../../assets/img/user/userProfile/userIcon.png" alt="프로필 아이콘">
+                <img src="/frontend/assets/img/user/userProfile/userIcon.png" alt="프로필 아이콘">
                 <div class="title">계정관리</div>
             </div>
             <div class="user">
@@ -79,6 +55,10 @@
             </div>
             <button class="userModify" form="goUserModify">정보 수정</button>
         </main>
+
     </div>
+
+    <script src="/frontend/assets/js/header.js"></script>
+    <script src="/frontend/assets/js/footer.js"></script>
 </body>
 </html>
