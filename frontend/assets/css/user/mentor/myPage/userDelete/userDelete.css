@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #f0f4ff;
+    background-color: white;
     /* 폰트 글꼴 지정 NanumSquareRound', sans-serif; */
     font-family: 'NanumSquareRound', sans-serif; 
 }
@@ -15,7 +15,7 @@ body {
     display: flex;
     margin-top: 40px;
     gap: 30px;
-    padding: 40px 50px;
+    padding: 80px 100px;
     min-height: 100vh; /* 고정값보다는 vh 단위가 유연합니다 */
 }
 
@@ -142,7 +142,7 @@ main {
 }
 
 .userInputBox{
-    margin-top: 40px;
+    margin-top: 15px;
     width: 50%;
 }
 
@@ -215,6 +215,11 @@ input {
     color: #ff0000;
     font-size: 16px;
     font-weight: 700;
+    margin-left: 150px; /* Label 너비와 동일하게 맞춰 정렬 */
+    height: 20px; /* 공간 확보 */
+}
+
+.spar{
     margin-left: 150px; /* Label 너비와 동일하게 맞춰 정렬 */
     height: 20px; /* 공간 확보 */
 }

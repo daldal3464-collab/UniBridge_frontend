@@ -6,22 +6,16 @@
 
 body {
     background-color: white;
-    /* 폰트 글꼴 지정 NanumSquareRound */
-    font-family: 'NanumSquareRound', sans-serif;
-}
-
-header {
-    padding: 16px 50px;
-    background-color: white;
-    border-bottom: 1px solid #e0e6ed;
+    /* 폰트 글꼴 지정 NanumSquareRound', sans-serif; */
+    font-family: 'NanumSquareRound', sans-serif; 
 }
 
 /* 기본 레이아웃 구성 */
 .main-container {
     display: flex;
-    margin-top: 60px;
+    margin-top: 40px;
     gap: 30px;
-    padding: 40px 50px;
+    padding: 80px 100px;
     min-height: 100vh; /* 고정값보다는 vh 단위가 유연합니다 */
 }
 

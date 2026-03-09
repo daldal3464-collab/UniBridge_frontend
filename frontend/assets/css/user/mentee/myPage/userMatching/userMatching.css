@@ -15,7 +15,7 @@ body {
     display: flex;
     margin-top: 40px;
     gap: 30px;
-    padding: 40px 50px;
+    padding: 80px 100px;
     min-height: 100vh; /* 고정값보다는 vh 단위가 유연합니다 */
 }
 
