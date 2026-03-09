@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>멘토링 관리</title>
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+  <link rel="stylesheet" href="/frontend/assets/css/user/mentor/myPage/userMentoCreate/mentoringView.css">
+  <link rel="stylesheet" href="/frontend/assets/css/header.css">
+  <link rel="stylesheet" href="/frontend/assets/css/footer.css">
+</head>
+<body>
+  <header>
+    <iframe src="/frontend/header/mentorHeader.html" height="56px" width="100%"></iframe>
+  </header>
+  <main>
+    <div id = "sidebarArea">
+      <div id="sidebar">
+        <div class="title">마이페이지</div>
+        <hr>
+        <nav id="sidebarNav">
+          <ul>
+            <li><a href="#">계정 관리</a></li>
+            <li><a href="">설문 조사</a></li>
+            <li><a href="">계정 정보</a></li>
+            <li><a href="">매칭 정보</a></li>
+            <li><a href="">회원 탈퇴</a></li>         
+            <li id = "locate"><a href="">멘토링</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div id = contents>
+      <div id = contentsHeader>
+        <img src="/frontend/assets/img/user/userMyPageImg/userMentoring.jpg" alt="멘토링 관리 아이콘">
+        <span>멘토링 관리</span>
+      </div>
+      <div id = contentsMain>
+        <div id = mentoringBackground>
+          <div id = mentoringMain>
+            <div id = mentoring>
+              <div id = mentoringTopics>
+                <div class = "title">
+                  <span>학습 주제 및 목표</span>
+                </div>
+                <div class="subject">
+                  <label for="mentoringSubject">학습 과목</label>
+                  <input type="text" id="mentoringSubject" value="국어" readonly>
+                </div>
+                <div class="subject">
+                  <label for="mentoringTitle">멘토링 주제</label>
+                  <input type="text" id="mentoringTitle" value="저장된 내용" readonly>
+                </div>
+                <div id = purpose>
+                  <label for="mentoringPurpose">멘토링 목적</label> 
+                  <textarea id="mentoringPurpose" readonly>저장된 내용</textarea>
+                </div>
+              </div>
+              <div id = curriculum>
+                <div id = "text">
+                  <div>
+                    <label for="mentoringCurriculum">멘토링 커리큘럼 상세</label>
+                  </div>
+                  <textarea id="mentoringCurriculum" readonly>저장된 내용</textarea>
+                </div>
+                <div id="file">
+                  <div id="curriculumFileTitle">파일 첨부</div>
+                  <div id="curriculumFile"></div>
+                </div>
+              </div>
+            </div>
+            <div id = profile>
+              <img src="/frontend/assets/img/user/userProfile/ex1.png" alt="사진">
+            </div>
+          </div>
+          <div id="buttons">
+            <button type="button">삭제</button>
+            <button type="button">수정</button>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer><iframe src="/frontend/footer/footer.html" height="205px" width="100%"></iframe>
+  </footer>
+</body>
+</html>

@@ -25,6 +25,10 @@ header {
     min-height: calc(100vh - 60px);
 }
 
+a {
+    text-decoration: none;
+}
+
 /* 사이드바 스타일 */
 aside {
     width: 220px;
@@ -37,7 +41,7 @@ aside {
 }
 
 .myPageTitle {
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 700;
     text-align: center;
     color: #222;
@@ -46,34 +50,44 @@ aside {
     margin-bottom: 20px;
 }
 
+/* 사이드바 리스트 초기화 */
 aside ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    height: 80%;
+    gap: 10px; /* 간격 살짝 조정 */
 }
 
-aside ul li {
-    padding: 10px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 20px;
+/* li가 아닌 a 태그에 스타일을 집중 (클릭 범위 확대) */
+aside ul li a {
+    display: block;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-size: 20px; /* 25px은 너무 커서 레이아웃을 깰 수 있음 */
     color: #888;
-    transition: background 0.2s, color 0.2s;
+    transition: all 0.2s;
     text-align: center;
 }
 
-aside ul li:nth-child(3) {
-    color: #4f73e3;
-    font-weight: 600;
-    background-color: transparent;
-}
-
-aside ul li:hover {
+/* 마우스 호버 시 */
+aside ul li a:hover {
     background-color: #eef2ff;
     color: #4f73e3;
 }
+
+aside ul li a:hover {
+    background-color: #eef2ff;
+    color: #4f73e3;
+}
+
+/* ✅ 활성화된 메뉴 스타일 (이 부분이 적용됩니다) */
+aside ul li a.active {
+    /* background-color: #4f73e3; 배경을 파란색으로 */
+    color: #4f73e3;              /* 글자를 흰색으로 (혹은 원하는 디자인대로) */
+    font-weight: 700;
+}
+
+/* 사이드바 끝 */
 
 /* 메인 콘텐츠 영역 */
 main {
