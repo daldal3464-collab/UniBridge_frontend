@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>미정 User Survey</title>
-    <link rel="stylesheet" href="../../../../../assets/css/user/undetermined/myPage/userSurvey/userSurvey.css">
-    <script defer src="../../../../../assets/js/user/undetermined/myPage/userSurvey/userSurvey.js"></script>
+    <title>멘토 설문조사t</title>
+    <link rel="stylesheet" href="../../../../../assets/css/user/mentor/myPage/userSurvey/userSurvey.css">
+    <script defer src="../../../../../assets/js/user/mentee/myPage/userSurvey/userSurvey.js"></script>
 </head>
 <body>
     <header>
@@ -15,9 +15,11 @@
         <aside>
             <div class="myPageTitle">마이페이지</div>
             <ul>
-                <li><a href="../../myPage/myPage.html" >계정 관리</a></li>
+                <li><a href="../../myPage/myPage.html">계정 관리</a></li>
                 <li><a href="userSurvey.html" class="active">설문 조사</a></li>
-                <li><a href="../../myPage/userDelete/userDelete.html">회원 탈퇴</a></li>
+                <li><a href="../userMatching/userMatching.html">매칭 정보</a></li>
+                <li><a href="">멘토링</a></li>
+                <li><a href="../userDelete/userDelete.html">회원 탈퇴</a></li>
             </ul>
         </aside>
         <main>
@@ -26,12 +28,29 @@
                 <div class="title">설문조사</div>
             </div>
             <div class="userTypeBox">
-                <div class="userText">
+                <div class="userItem">
                     <label>멘토/멘티</label>
-                    <div class="userType">미정</div>
+                    <div class="userValue">멘티</div>
+                </div>
+                <div class="userItem"></div> <div class="userItem">
+                    <label>대학</label>
+                    <div class="userValue">한국 대학교</div>
+                </div>
+                <div class="userItem">
+                    <label>졸업학점</label>
+                    <div class="userValue">4.0</div>
+                </div>
+
+                <div class="userItem">
+                    <label>교육과목</label>
+                    <div class="userValue">Java</div>
+                </div>
+                <div class="userItem">
+                    <label>전공</label>
+                    <div class="userValue">컴퓨터 공학</div>
                 </div>
             </div>
-            <button id="userWriteBtn">작성</button>
+            <button id="userWriteBtn">재작성</button>
             <div id="surveyModal" class="modal">
                 <div class="modal-content">
                     <button class="closeBtn"><img src="../../../../../assets/img/user/userProfile/close.png" alt=""></button>

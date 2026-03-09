@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>미정 User Survey</title>
-    <link rel="stylesheet" href="../../../../../assets/css/user/undetermined/myPage/userSurvey/userSurvey.css">
-    <script defer src="../../../../../assets/js/user/undetermined/myPage/userSurvey/userSurvey.js"></script>
+    <title>미정 유저 거부 사유</title>
+    <link rel="stylesheet" href="../../../../../assets/css/user/undetermined/myPage/userSurvey/userRefusal.css">
+    <script defer src="../../../../../assets/js/user/undetermined/myPage/userSurvey/userRefusal.js"></script>
 </head>
 <body>
     <header>
@@ -15,8 +15,8 @@
         <aside>
             <div class="myPageTitle">마이페이지</div>
             <ul>
-                <li><a href="../../myPage/myPage.html" >계정 관리</a></li>
-                <li><a href="userSurvey.html" class="active">설문 조사</a></li>
+                <li><a href="../../myPage/myPage.html" class="active">계정 관리</a></li>
+                <li><a href="../../myPage/userSurvey/userSurvey.html">설문 조사</a></li>
                 <li><a href="../../myPage/userDelete/userDelete.html">회원 탈퇴</a></li>
             </ul>
         </aside>
@@ -30,8 +30,16 @@
                     <label>멘토/멘티</label>
                     <div class="userType">미정</div>
                 </div>
+                <die class="context">
+                    <div class="refusalTitle">신청 거부 사유</div>
+                    <div class="refusalContext">
+                        <div class="text">
+                            증명서 미첨부
+                        </div>
+                    </div>
+                </die>
             </div>
-            <button id="userWriteBtn">작성</button>
+            <button id="userWriteBtn">재작성</button>
             <div id="surveyModal" class="modal">
                 <div class="modal-content">
                     <button class="closeBtn"><img src="../../../../../assets/img/user/userProfile/close.png" alt=""></button>
