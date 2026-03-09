@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>결제</title>
+  <title>결제 완료</title>
   <link rel="stylesheet" href="/assets/css/user/mentorSearch/payment/payment.css">
   <link rel="stylesheet" href="/assets/css/header.css">
   <link rel="stylesheet" href="/assets/css/footer.css">
   <link href="/assets/css/fonts.css" rel="stylesheet">
+  <script defer src="/assets/js/user/mentorSearch/paymentFinish.js"></script>
 </head>
 <body>
   <header>
@@ -24,29 +25,29 @@
     </div>
 
     <div id="pay">
-      <div class="title">결제 상세</div>
+      <div class="title">결제 완료</div>
+      
       <div id="payment">
-        <div id="payWay">
-          <div class="title">
-          아무개
-          </div>
-          <hr>
-          <div>카카오 페이 결제</div>
-          <div id="kakaoPay">
-            <input type="radio" name="kakao" id="kakao">
-            <label for="kakao">카카오페이머니</label>
-          </div>
-          <hr>
-          <div class="title">결제정보</div>
+        <div id="payResult">
+        <div class="title">결제 계좌</div>
+        <div id="payAccount">
+          카카오)123456-78-123456
+        </div>
+        <hr>
+          <div class="title">결제 번호</div>
+        <div id="payNumber">
+          4520-0200-1900-4060
+        </div>
           <hr>
           <div id="price">
-            <div class="title">가격</div>
+            <div class="title"> 결제 가격</div>
             <div class="title">10,000원</div>
           </div>
         </div>
       </div>
+
       <div>
-        <button type="button">카카오 결제</button>
+        <button type="button">결제 완료</button>
       </div>
     </div>
   </main>

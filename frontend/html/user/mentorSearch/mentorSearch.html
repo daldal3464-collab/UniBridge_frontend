@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>멘토 검색</title>
-  <link rel="stylesheet" href="/frontend/assets/css/user/mentorSearch/mentorSearch.css">
-  <link rel="stylesheet" href="/frontend/assets/css/header.css">
-  <link rel="stylesheet" href="/frontend/assets/css/footer.css">
-  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/user/mentorSearch/mentorSearch.css">
+  <link rel="stylesheet" href="/assets/css/header.css">
+  <link rel="stylesheet" href="/assets/css/footer.css">
+  <link href="/assets/css/fonts.css" rel="stylesheet">
+  <script defer src="/assets/js/user/mentorSearch/mentorSearch.js"></script>
 </head>
 <body>
   <header>
-    <iframe src="/frontend/header/mentorHeader.html" height="57px" width="100%"></iframe>
+
   </header>
   <main>
     <div id="mentoTitle">멘토</div>
@@ -40,8 +41,8 @@
               <div class="mentoSubject">국어</div>
               <div class="mentoCardMain">
                 <div class="mentoFront">
-                  <img src="/frontend/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
-                  <button type="button">매칭</button>
+                  <img src="/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
+                  <button type="button" id = "matching">매칭</button>
                 </div>
                 <div class="mentoBack">
                   <div class="mentoringPurpose">국어를 집중적으로 공부하여 수능 최저를 맞출 수 있도록 도와드립니다. </div>
@@ -63,58 +64,8 @@
               <div class="mentoSubject">국어</div>
               <div class="mentoCardMain">
                 <div class="mentoFront">
-                  <img src="/frontend/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
-                  <button type="button">매칭</button>
-                </div>
-                <div class="mentoBack">
-                  <div class="mentoringPurpose">국어를 집중적으로 공부하여 수능 최저를 맞출 수 있도록 도와드립니다. </div>
-                  <div>
-                    <div class="mentoUniSchool"> 대학교 : 코딩대학교</div>
-                    <div class="mentoMajor"> 학과 : 코딩학과</div>
-                  </div>
-                  <div class="mentoringDay">2026.02.21(토)</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="contents">
-      <div class="mentoList">
-        <div class="mentoInfo">
-          <div class="mentoName">아무개</div>
-          <div class="mentoCard">
-            <div class="mentoCardHead">
-              <div class="mentoSubject">국어</div>
-              <div class="mentoCardMain">
-                <div class="mentoFront">
-                  <img src="/frontend/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
-                  <button type="button">매칭</button>
-                </div>
-                <div class="mentoBack">
-                  <div class="mentoringPurpose">국어를 집중적으로 공부하여 수능 최저를 맞출 수 있도록 도와드립니다. </div>
-                  <div>
-                    <div class="mentoUniSchool"> 대학교 : 코딩대학교</div>
-                    <div class="mentoMajor"> 학과 : 코딩학과</div>
-                  </div>
-                  <div class="mentoringDay">2026.02.21(토)</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mentoInfo">
-          <div class="mentoName">아무개</div>
-          <div class="mentoCard">
-            <div class="mentoCardHead">
-              <div class="mentoSubject">국어</div>
-              <div class="mentoCardMain">
-                <div class="mentoFront">
-                  <img src="/frontend/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
-                  <button type="button">매칭</button>
+                  <img src="/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
+                  <button type="button" id = "matching">매칭</button>
                 </div>
                 <div class="mentoBack">
                   <div class="mentoringPurpose">국어를 집중적으로 공부하여 수능 최저를 맞출 수 있도록 도와드립니다. </div>
@@ -140,8 +91,8 @@
               <div class="mentoSubject">국어</div>
               <div class="mentoCardMain">
                 <div class="mentoFront">
-                  <img src="/frontend/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
-                  <button type="button">매칭</button>
+                  <img src="/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
+                  <button type="button" id = "matching">매칭</button>
                 </div>
                 <div class="mentoBack">
                   <div class="mentoringPurpose">국어를 집중적으로 공부하여 수능 최저를 맞출 수 있도록 도와드립니다. </div>
@@ -163,8 +114,58 @@
               <div class="mentoSubject">국어</div>
               <div class="mentoCardMain">
                 <div class="mentoFront">
-                  <img src="/frontend/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
-                  <button type="button">매칭</button>
+                  <img src="/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
+                  <button type="button" id = "matching">매칭</button>
+                </div>
+                <div class="mentoBack">
+                  <div class="mentoringPurpose">국어를 집중적으로 공부하여 수능 최저를 맞출 수 있도록 도와드립니다. </div>
+                  <div>
+                    <div class="mentoUniSchool"> 대학교 : 코딩대학교</div>
+                    <div class="mentoMajor"> 학과 : 코딩학과</div>
+                  </div>
+                  <div class="mentoringDay">2026.02.21(토)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contents">
+      <div class="mentoList">
+        <div class="mentoInfo">
+          <div class="mentoName">아무개</div>
+          <div class="mentoCard">
+            <div class="mentoCardHead">
+              <div class="mentoSubject">국어</div>
+              <div class="mentoCardMain">
+                <div class="mentoFront">
+                  <img src="/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
+                  <button type="button" id = "matching">매칭</button>
+                </div>
+                <div class="mentoBack">
+                  <div class="mentoringPurpose">국어를 집중적으로 공부하여 수능 최저를 맞출 수 있도록 도와드립니다. </div>
+                  <div>
+                    <div class="mentoUniSchool"> 대학교 : 코딩대학교</div>
+                    <div class="mentoMajor"> 학과 : 코딩학과</div>
+                  </div>
+                  <div class="mentoringDay">2026.02.21(토)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mentoInfo">
+          <div class="mentoName">아무개</div>
+          <div class="mentoCard">
+            <div class="mentoCardHead">
+              <div class="mentoSubject">국어</div>
+              <div class="mentoCardMain">
+                <div class="mentoFront">
+                  <img src="/assets/img/user/userProfile/ex1.png" alt="멘토 사진">
+                  <button type="button" id = "matching">매칭</button>
                 </div>
                 <div class="mentoBack">
                   <div class="mentoringPurpose">국어를 집중적으로 공부하여 수능 최저를 맞출 수 있도록 도와드립니다. </div>
@@ -189,7 +190,7 @@
 
     <div id="pageNumber">
       <ul>
-        <li>&lt;</li>
+        <li id = left>&lt;</li>
         <li id="nowPage">1</li>
         <li>2</li>
         <li>3</li>
@@ -200,12 +201,11 @@
         <li>8</li>
         <li>9</li>
         <li>10</li>
-        <li>&gt;</li>
+        <li id = right>&gt;</li>
       </ul>
     </div>
   </main>
   <footer>
-    <iframe src="/frontend/footer/footer.html" height="205px" width="100%"></iframe>
   </footer>
 </body>
 </html>

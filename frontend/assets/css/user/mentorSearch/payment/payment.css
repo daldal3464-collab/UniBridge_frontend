@@ -1,6 +1,7 @@
 *{
-  padding:0px;
-  margin: 0px;
+  margin : 0px;
+  padding : 0px;
+  font-family: NanumSquareRound
 }
 
 main{
@@ -91,4 +92,22 @@ button{
   border: 1px solid #FFFB7C;
   border-radius: 50px;
   cursor: pointer;
+  font-size : 30px;
+}
+
+#payNumber{
+  color : black;
+  font-weight: bold;
+  font-size : 24px;
+  padding : 10px;
+}
+
+#payAccount{
+  font-size : 20px;
+  padding : 10px;
+  font-weight: bold;
+}
+
+#payResult{
+  margin : 10px;
 }

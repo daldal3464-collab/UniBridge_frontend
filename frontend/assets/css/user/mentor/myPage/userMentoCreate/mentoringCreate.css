@@ -1,7 +1,7 @@
 *{
   margin : 0px;
   padding : 0px;
-  font-family: "NanumSquareRoundBold", sans-serif;
+  font-family: NanumSquareRoundBold
 }
 
 .title{
@@ -13,7 +13,7 @@
   color: red;
   font-size: 15px;
   margin-left: 10px;
-  /* display: none; */
+  display: none;
 }
 
 nav ul{
@@ -122,7 +122,7 @@ main{
   background: linear-gradient(#F8FBFF,#FDFEFF);
   border-radius: 18px;
   display : flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   flex-direction: column;
 }
 
@@ -296,4 +296,4 @@ label[for="mentoringCurriculum"]{
 
 footer{
   height : 204px;
-}
+} 
