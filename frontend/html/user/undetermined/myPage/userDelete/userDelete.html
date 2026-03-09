@@ -4,42 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>미정 회원탈퇴</title>
-    <link rel="stylesheet" href="../../../../../assets/css/user/undetermined/myPage/userDelete/userDelete.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Noto+Sans+KR:wght@300;400;500&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="../../../../../assets/css/header.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/header.css" />
+    <link rel="stylesheet" href="/assets/css/footer.css" />
+    <link rel="stylesheet" href="/assets/css/user/undetermined/myPage/userDelete/userDelete.css">
     <script defer src="/assets/js/user/undetermined/myPage/userDelete/userDelete.js"></script>
 </head>
 <body>
-    <header class="headerWrap">
-        <div class="headerInner">
+    
+    <div id="headerContainer"></div>
 
-            <!-- 로고 -->
-            <a href="/main.html" class="headerLogo">
-                <img src="../../../../../assets/img/UniBridge.png" alt="UniBridge" />
-            </a>
-
-            <nav class="headerNav">
-                <a href="#">멘토 검색</a>
-                <a href="#">게시판</a>
-                <a href="#">학습보고서</a>
-                <a href="./announceBoard.html">공지사항</a>
-            </nav>
-
-            <div class="headerAuthGroup">
-                <div class="userInfoWrap">
-                    <span class="userName">홍길동</span>/
-                    <span class="userRoleBadge pending">미정</span>
-                </div>
-                <div class="headerDivider"></div>
-                <a href="#" class="headerBtnText" id="headerBtnMypage">마이페이지</a>
-                <div class="headerDivider"></div>
-                <a href="#" class="headerBtnText logout" id="headerBtnLogout">로그아웃</a>
-            </div>
-
-        </div>
-    </header>
     <div class="main-container">
         <aside>
             <div class="myPageTitle">마이페이지</div>
@@ -51,7 +25,7 @@
         </aside>
         <main>
             <div class="userManage-title">
-                <img src="../../../../../assets/img/user/userProfile/userDelete.png" alt="회원탈퇴 아이콘">
+                <img src="/assets/img/user/userProfile/userDelete.png" alt="회원탈퇴 아이콘">
                 <div class="title">회원탈퇴</div>
             </div>
             <div class="userMSG">
@@ -99,8 +73,13 @@
 
                     <button type="submit" class="userDelete" id="submitBtn" disabled>탈퇴 신청</button>
                 </form>
+                
             </div>
         </main>
+
     </div>
+
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/footer.js"></script>
 </body>
 </html>

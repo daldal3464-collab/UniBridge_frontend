@@ -36,7 +36,7 @@ main{
     padding: 60px 80px;
     border-radius: 60px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    width: 500px; /* 사진과 비슷한 적절한 너비 */
+    width: 600px; /* 사진과 비슷한 적절한 너비 */
     text-align: left; /* 텍스트는 왼쪽 정렬 */
 }
 

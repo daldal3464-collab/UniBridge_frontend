@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>멘토 인증페이지</title>
-    <link rel="stylesheet" href="../../../../../assets/css/user/mentor/myPage/userManage/userModifyCheck.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/header.css" />
+    <link rel="stylesheet" href="/assets/css/footer.css" />
+    <link rel="stylesheet" href="/assets/css/user/mentor/myPage/userManage/userModifyCheck.css">
+    <script defer src="/assets/js/user/mentor/myPage/userManage/userModifyCheck.js"></script>
 </head>
 <body>
-    <header>
-        <div class="menuTree">header</div>
-    </header>
+
+    <div id="headerContainer"></div>
+
     <div class="main-container">
         <aside>
             <div class="myPageTitle">마이페이지</div>
@@ -23,7 +27,7 @@
         </aside>
         <main>
             <div class="userManage-title">
-                <img src="../../../../../assets/img/user/userProfile/userIcon.png" alt="프로필 아이콘">
+                <img src="/assets/img/user/userProfile/userIcon.png" alt="프로필 아이콘">
                 <div class="title">계정관리</div>
             </div>
             <div class="user">
@@ -49,8 +53,14 @@
                     </form>
                 </div>
             </div>
+            
             <button class="userModify" form="goUserModify">정보 수정</button>
+
         </main>
+
     </div>
+
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/footer.js"></script>
 </body>
 </html>

@@ -4,55 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>멘토 설문조사t</title>
-    <link rel="stylesheet" href="../../../../../assets/css/user/mentor/myPage/userSurvey/userSurvey.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Noto+Sans+KR:wght@300;400;500&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="./../../../../../assets/css/header.css" />
-    <script defer src="../../../../../assets/js/user/mentee/myPage/userSurvey/userSurvey.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/header.css" />
+    <link rel="stylesheet" href="/assets/css/footer.css" />
+    <link rel="stylesheet" href="/assets/css/user/mentor/myPage/userSurvey/userSurvey.css">
+    <script defer src="/assets/js/user/mentee/myPage/userSurvey/userSurvey.js"></script>
 </head>
 <body>
-    <header class="headerWrap">
-        <div class="headerInner">
+    
+    <div id="headerContainer"></div>
 
-            <!-- 로고 -->
-            <a href="/main.html" class="headerLogo">
-                <img src="../../../../../assets/img/UniBridge.png" alt="UniBridge" />
-            </a>
-
-            <nav class="headerNav">
-                <a href="#">멘토 검색</a>
-                <a href="/html/user/mentee/mentorBoard/mentorBoardList.html">게시판</a>
-                <a href="#">학습보고서</a>
-                <a href="/announceBoard.html">공지사항</a>
-            </nav>
-
-            <div class="headerAuthGroup">
-                <div class="userInfoWrap">
-                    <span class="userName">홍길동</span>/
-                    <span class="userRoleBadge mentoRoleBadge">멘토</span>
-                </div>
-
-                <div class="headerDivider"></div>
-
-                <form action="#" method="GET" style="display:inline;">
-                    <button type="submit" class="headerBtnText" id="headerBtnMypage">마이페이지</button>
-                </form>
-
-                <div class="headerDivider"></div>
-
-                <form action="#" method="POST" style="display:inline;">
-                    <button type="submit" class="headerBtnText logout" id="headerBtnLogout">로그아웃</button>
-                </form>
-            </div>
-
-        </div>
-    </header>
     <div class="main-container">
         <aside>
             <div class="myPageTitle">마이페이지</div>
             <ul>
-                <li><a href="../../myPage/myPage.html">계정 관리</a></li>
+                <li><a href="../myPage/myPage.html">계정 관리</a></li>
                 <li><a href="userSurvey.html" class="active">설문 조사</a></li>
                 <li><a href="../userMatching/userMatching.html">매칭 정보</a></li>
                 <li><a href="../userMentoCreate/mentoringView.html">멘토링</a></li>
@@ -61,7 +27,7 @@
         </aside>
         <main>
             <div class="userManage-title">
-                <img src="../../../../../assets/img/user/userMyPageImg/userManage.jpg" alt="프로필 아이콘">
+                <img src="/assets/img/user/userMyPageImg/userManage.jpg" alt="프로필 아이콘">
                 <div class="title">설문조사</div>
             </div>
             <div class="userTypeBox">
@@ -195,10 +161,15 @@
                                 <button type="button" class="cancelBtn" id="closeModalBtn">취소</button>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
         </main>
+        
     </div>
+
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/footer.js"></script>
 </body>
 </html>

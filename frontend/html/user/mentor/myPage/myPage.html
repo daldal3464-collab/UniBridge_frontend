@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>멘토 마이페이지</title>
-    <link rel="stylesheet" href="../../../../assets/css/user/mentor/myPage/myPage.css">
-    <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
-    rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/header.css" />
     <link rel="stylesheet" href="/assets/css/footer.css" />
-    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/user/mentor/myPage/myPage.css" />
 </head>
 <body>
 
     <div id="headerContainer"></div>
+
     <div class="main-container">
         <aside>
             <div class="myPageTitle">마이페이지</div>
@@ -26,13 +24,15 @@
                 <li><a href="../myPage/userDelete/userDelete.html">회원 탈퇴</a></li>
             </ul>
         </aside>
+
         <main>
             <div class="userManage-title">
-                <img src="../../../../assets/img/user/userProfile/userIcon.png" alt="프로필 아이콘">
+                <img src="/assets/img/user/userProfile/userIcon.png" alt="프로필 아이콘">
                 <div class="title">계정관리</div>
             </div>
+            
             <div class="user">
-                <img src="../../../../assets/img/user/userProfile/ex1.png" alt="유저의 프로필 사진">
+                <img src="/assets/img/user/userProfile/ex1.png" alt="유저의 프로필 사진">
                 <div class="userProfile">
                     <div class="userText">
                         <label for="">아이디</label>
@@ -56,14 +56,15 @@
                     </div>
                 </div>
             </div>
-            <form action="../myPage/userManage/userModifyCheck.html">
+
+            <form action="/html/user/mentor/myPage/userManage/userModifyCheck.html">
                 <button class="userModify">수정</button>
             </form>
         </main>
+
     </div>
 
     <script src="/assets/js/header.js"></script>
-  <script src="/assets/js/footer.js"></script>
-  <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/footer.js"></script>
 </body>
 </html>
