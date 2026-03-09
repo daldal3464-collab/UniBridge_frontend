@@ -1,27 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // 1. 헤더 가져오기 
-  fetch('./../../../../header/mentorHeader.html') // 경로 수정
-    .then(response => {
-      if (!response.ok) throw new Error('헤더를 찾을 수 없습니다.');
-      return response.text();
-    })
-    .then(data => {
-      document.getElementById('headerContainer').innerHTML = data;
-    })
-    .catch(error => console.error('헤더 오류:', error));
-
-  // 2. 푸터 가져오기
-  fetch('./../../../../footer/footer.html') // 경로 수정
-    .then(response => {
-      if (!response.ok) throw new Error('푸터를 찾을 수 없습니다.');
-      return response.text();
-    })
-    .then(data => {
-      document.getElementById('footerContainer').innerHTML = data;
-    })
-    .catch(error => console.error('푸터 오류:', error));
-});
-
 // mentorBoardModify.js
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const boardId = params.get('boardId');
 
   // detail 페이지에서 넘어온 데이터를 sessionStorage에서 불러오기
-  // (mentorBoardDetail.js에서 수정 버튼 클릭 시 저장)
   const savedData = sessionStorage.getItem('mentorBoardModifyData');
   if (savedData) {
     const data = JSON.parse(savedData);
