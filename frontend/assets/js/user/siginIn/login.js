@@ -21,4 +21,5 @@ loginForm.addEventListener("submit", function(e){
 
     errorMsg.textContent = "";
     alert("로그인 성공!");
+    window.location.href = '/frontend/main.html';
 });
