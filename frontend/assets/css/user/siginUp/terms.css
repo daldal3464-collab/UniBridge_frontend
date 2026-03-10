@@ -108,3 +108,8 @@ input[type="checkbox"] {
 .termsBtn:hover {
     background-color: #d0daff;
 }
+
+.termsBtn:disabled{
+    background:#ccc;
+    cursor:not-allowed;
+}
