@@ -28,10 +28,17 @@ submitBtn.onclick = (event) => {
     // 1. 폼 전송으로 인한 새로고침 방지
     event.preventDefault();
 
-    // 2. 원하는 경로를 직접 지정하여 이동합니다.
-    // 예: "userModify.html" 또는 "../../main.html" 등
-    const targetPath = "/frontend/html/user/mentee/myPage/myPage.html"; 
-    window.location.href = targetPath;
+    // 2. 사용자 확인 창 띄우기
+    const isConfirmed = confirm("정말로 매칭을 취소 신청하시겠습니까?");
+
+    if (isConfirmed) {
+        // [확인] 클릭 시: 특정 경로로 이동
+        const targetPath = "/frontend/html/user/mentee/myPage/myPage.html"; 
+        window.location.href = targetPath;
+    } else {
+        // [취소] 클릭 시: 아무 동작도 하지 않음 (모달 상태 유지)
+        console.log("매칭 취소 신청이 중단되었습니다.");
+    }
 };
 
 reportBtn.onclick = (event) => {

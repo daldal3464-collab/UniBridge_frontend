@@ -206,9 +206,63 @@ input {
     font-weight: 700;
 }
 
+.change{
+    margin-left: 10px;
+    width: 18%;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.authBtn{
+    margin-left: 10px;
+    width: 20%;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+}
+
 .spacer {
     margin-left: 10px;
     width: 18%; /* .duplication 버튼과 동일한 너비 */
+}
+
+.spacer2{
+    margin-left: 10px;
+    width: 16%; /* .authBtn 버튼과 동일한 너비 */
+}
+
+/* 라디오 버튼 자체의 크기 조절 */
+.radio-group{
+    display: flex;
+    width: 55.5%;
+}
+
+.radioUserType {
+    width: 20px;          /* 기본 영역 확보 */
+    height: 20px;         /* 기본 영역 확보 */
+    transform: scale(1.5); /* 1.5배 확대 (원하는 크기에 따라 조절) */
+    cursor: pointer;
+    margin: 0 5px;        /* 주변 요소와의 간격 조정 */
+    vertical-align: middle; /* 텍스트와 중앙 정렬 */
+}
+
+/* 라디오 버튼을 감싸고 있는 라벨(텍스트) 스타일 조정 */
+.radioItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;             /* 글자와 버튼 사이의 간격 */
+    font-size: 18px;      /* 버튼 크기에 맞춰 글자 크기도 조정 가능 */
+    cursor: pointer;
+    margin-right: 15px;   /* 각 성별 항목 간의 간격 */
 }
 
 /* 수정 버튼 우측 하단 absolute */

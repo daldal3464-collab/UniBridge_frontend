@@ -1,212 +1,199 @@
 const DUPLICATE_NICKNAMES = ["test"];
-
-// 상태 플래그
-let nicknameChanged = false;
-let passwordChanged = false;
-let photoAttached   = false;
-
-// ── input-group 안의 .error-msg에 텍스트 세팅 ──
-function showError(inputEl, message) {
-  const group = inputEl.closest(".input-group");
-  const errorEl = group ? group.querySelector(".error-msg") : null;
-  if (errorEl) errorEl.textContent = message;
-  updateCompleteBtn();
-}
-
-function clearError(inputEl) {
-  const group = inputEl.closest(".input-group");
-  const errorEl = group ? group.querySelector(".error-msg") : null;
-  if (errorEl) errorEl.textContent = "";
-  updateCompleteBtn();
-}
-
-// ── 완료 버튼 활성/비활성 ──
-function updateCompleteBtn() {
-  const btn = document.querySelector(".userModify");
-  if (!btn) return;
-
-  const hasError = Array.from(document.querySelectorAll(".error-msg"))
-    .some(el => el.textContent.trim() !== "");
-
-  const canSubmit = !hasError && nicknameChanged && passwordChanged && photoAttached;
-
-  btn.disabled      = !canSubmit;
-  btn.style.opacity = canSubmit ? "1" : "0.5";
-  btn.style.cursor  = canSubmit ? "pointer" : "not-allowed";
-}
-
-// ── 버튼 활성/비활성 헬퍼 ──
-function setBtn(btn, enabled) {
-  if (!btn) return;
-  btn.disabled      = !enabled;
-  btn.style.opacity = enabled ? "1" : "0.5";
-  btn.style.cursor  = enabled ? "pointer" : "not-allowed";
-}
+const VALID_AUTH_CODE = "1234"; // 테스트용 인증번호
 
 document.addEventListener("DOMContentLoaded", () => {
+    // ── 요소 참조 ──
+    const completeBtn = document.querySelector(".userModify");
+    const profileImg = document.querySelector(".userImg > img");
+    const photoBtn = document.querySelector("#imgBtn");
+    const photoError = document.querySelector(".userImg .error-msg");
 
-  // ── 요소 참조 ──
-  const completeBtn    = document.querySelector(".userModify");
+    // 상태 변수
+    let isNickChecked = false; // 중복 확인 완료 여부
+    let isPhoneAuthSent = false; // 인증번호 발송 여부
+    let isPhoneVerified = false; // 인증번호 확인 완료 여부
+    let isPhotoAttached = !!profileImg.getAttribute("src") && !profileImg.src.includes("ex1.png"); 
+    // 기본 이미지(ex1.png)가 아닐 경우 이미 등록된 것으로 간주
 
-  // 닉네임 input-group
-  const nicknameGroup  = document.querySelectorAll(".input-group")[2]; // 세 번째 .input-group
-  const nicknameInput  = nicknameGroup.querySelector("input");
-  const nickBtns       = nicknameGroup.querySelectorAll("button");
-  const nickDupBtn     = nickBtns[0]; // 중복확인
-  const nickChangeBtn  = nickBtns[1]; // 변경
+    // ──────────────────────────────────────
+    // 1. 프로필 사진 관리
+    // ──────────────────────────────────────
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/*";
 
-  // 비밀번호 input-group들
-  const pwGroup        = document.querySelectorAll(".input-group")[3]; // 변경할 비밀번호
-  const pwInput        = pwGroup.querySelector("input");
+    photoBtn.addEventListener("click", () => fileInput.click());
 
-  const pwConfirmGroup = document.querySelectorAll(".input-group")[4]; // 비밀번호 확인
-  const pwConfirmInput = pwConfirmGroup.querySelector("input");
-  const pwBtns         = pwConfirmGroup.querySelectorAll("button");
-  const pwCheckBtn     = pwBtns[0]; // 확인
-  const pwChangeBtn    = pwBtns[1]; // 변경
-
-  // 초기 버튼 비활성화
-  if (completeBtn) {
-    completeBtn.disabled      = true;
-    completeBtn.style.opacity = "0.5";
-    completeBtn.style.cursor  = "not-allowed";
-  }
-  setBtn(nickChangeBtn, false);
-  setBtn(pwChangeBtn,   false);
-
-  let nickDupPassed = false;
-  let pwCheckPassed = false;
-
-  // ──────────────────────────────────────
-  // 사진 변경
-  // ──────────────────────────────────────
-  const photoBtn   = document.querySelector(".userImg > button");
-  const profileImg = document.querySelector(".userImg > img");
-  const photoErrorEl = document.querySelector(".photo-error-msg");
-
-  const fileInput = document.createElement("input");
-  fileInput.type   = "file";
-  fileInput.accept = "image/*";
-  fileInput.style.display = "none";
-  document.body.appendChild(fileInput);
-
-  if (photoBtn) {
-    photoBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      fileInput.click();
+    fileInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                profileImg.src = event.target.result;
+                isPhotoAttached = true;
+                photoError.textContent = ""; 
+            };
+            reader.readAsDataURL(file);
+        }
     });
-  }
 
-  fileInput.addEventListener("change", () => {
-    const file = fileInput.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      if (profileImg) profileImg.src = e.target.result;
-      photoAttached = true;
-      if (photoErrorEl) photoErrorEl.textContent = "";
-      updateCompleteBtn();
-    };
-    reader.readAsDataURL(file);
-  });
+    // ──────────────────────────────────────
+    // 2. 닉네임 변경
+    // ──────────────────────────────────────
+    const nickGroup = document.querySelectorAll(".input-group")[2];
+    const nickInput = nickGroup.querySelector("input");
+    const nickDupBtn = nickGroup.querySelectorAll("button")[0];
+    const nickChangeBtn = nickGroup.querySelectorAll("button")[1];
+    const nickError = nickGroup.querySelector(".error-msg");
 
-  // ──────────────────────────────────────
-  // 닉네임 중복확인
-  // ──────────────────────────────────────
-  nickDupBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    const val = nicknameInput.value.trim();
-    if (!val) {
-      showError(nicknameInput, "닉네임을 입력해주세요.");
-      nickDupPassed = false;
-    } else if (DUPLICATE_NICKNAMES.includes(val)) {
-      showError(nicknameInput, "중복 닉네임이 있습니다. / 중복 닉네임 확인이 필요합니다.  ");
-      nickDupPassed = false;
-    } else {
-      clearError(nicknameInput);
-      nickDupPassed = true;
-    }
-    setBtn(nickChangeBtn, nickDupPassed);
-  });
+    nickInput.addEventListener("input", () => {
+        isNickChecked = false;
+        nickError.style.color = "red";
+        nickError.textContent = "중복 닉네임 확인이 필요합니다.";
+    });
 
-  nicknameInput.addEventListener("input", () => {
-    nickDupPassed   = false;
-    nicknameChanged = false;
-    clearError(nicknameInput);
-    setBtn(nickChangeBtn, false);
-    updateCompleteBtn();
-  });
+    nickDupBtn.addEventListener("click", () => {
+        const val = nickInput.value.trim();
+        if (!val) {
+            nickError.textContent = "닉네임을 입력해주세요.";
+            return;
+        }
+        if (DUPLICATE_NICKNAMES.includes(val)) {
+            nickError.style.color = "red";
+            nickError.textContent = "중복 닉네임이 있습니다.";
+            isNickChecked = false;
+        } else {
+            nickError.textContent = "사용 가능한 닉네임입니다.";
+            nickError.style.color = "blue";
+            isNickChecked = true;
+        }
+    });
 
-  // 닉네임 변경 버튼
-  nickChangeBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (!nickDupPassed) return;
-    nicknameChanged = true;
-    updateCompleteBtn();
-  });
+    nickChangeBtn.addEventListener("click", () => {
+        if (!isNickChecked) {
+            nickError.style.color = "red";
+            nickError.textContent = "중복 닉네임 확인이 필요합니다.";
+        } else {
+            alert("닉네임이 성공적으로 변경되었습니다.");
+            nickError.textContent = "";
+        }
+    });
 
-  // ──────────────────────────────────────
-  // 비밀번호 확인
-  // ──────────────────────────────────────
-  pwCheckBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (!pwInput.value) {
-      showError(pwConfirmInput, "변경할 비밀번호를 먼저 입력해주세요.");
-      pwCheckPassed = false;
-    } else if (pwInput.value !== pwConfirmInput.value) {
-      showError(pwConfirmInput, "비밀번호가 일치하지 않습니다./ 비밀번호 확인이 필요합니다.");
-      pwCheckPassed = false;
-    } else {
-      clearError(pwConfirmInput);
-      pwCheckPassed = true;
-    }
-    setBtn(pwChangeBtn, pwCheckPassed);
-  });
+    // ──────────────────────────────────────
+    // 3. 비밀번호 변경
+    // ──────────────────────────────────────
+    const pwInput = document.querySelectorAll(".input-group")[3].querySelector("input");
+    const pwConfirmGroup = document.querySelectorAll(".input-group")[4];
+    const pwConfirmInput = pwConfirmGroup.querySelector("input");
+    const pwCheckBtn = pwConfirmGroup.querySelectorAll("button")[0];
+    const pwChangeBtn = pwConfirmGroup.querySelectorAll("button")[1];
+    const pwError = pwConfirmGroup.querySelector(".error-msg");
 
-  pwInput.addEventListener("input", () => {
-    pwCheckPassed   = false;
-    passwordChanged = false;
-    if (pwConfirmInput.value) {
-      if (pwInput.value !== pwConfirmInput.value) showError(pwConfirmInput, "비밀번호가 일치하지 않습니다./ 비밀번호 확인이 필요합니다.");
-      else clearError(pwConfirmInput);
-    }
-    setBtn(pwChangeBtn, false);
-    updateCompleteBtn();
-  });
+    let isPwMatched = false;
 
-  pwConfirmInput.addEventListener("input", () => {
-    pwCheckPassed   = false;
-    passwordChanged = false;
-    if (!pwConfirmInput.value) clearError(pwConfirmInput);
-    else if (pwInput.value !== pwConfirmInput.value) showError(pwConfirmInput, "비밀번호가 일치하지 않습니다.");
-    else clearError(pwConfirmInput);
-    setBtn(pwChangeBtn, false);
-  });
+    pwCheckBtn.addEventListener("click", () => {
+        if (!pwInput.value || !pwConfirmInput.value) {
+            pwError.style.color = "red";
+            pwError.textContent = "비밀번호를 모두 입력해주세요.";
+            return;
+        }
+        if (pwInput.value !== pwConfirmInput.value) {
+            pwError.style.color = "red";
+            pwError.textContent = "비밀번호가 일치하지 않습니다.";
+            isPwMatched = false;
+        } else {
+            pwError.textContent = "비밀번호가 일치합니다.";
+            pwError.style.color = "blue";
+            isPwMatched = true;
+        }
+    });
 
-  // 비밀번호 변경 버튼
-  pwChangeBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (!pwCheckPassed) return;
-    passwordChanged = true;
-    updateCompleteBtn();
-  });
+    pwChangeBtn.addEventListener("click", () => {
+        if (!isPwMatched) {
+            pwError.style.color = "red";
+            pwError.textContent = "비밀번호 확인이 필요합니다.";
+        } else {
+            alert("비밀번호가 성공적으로 변경되었습니다.");
+            pwError.textContent = "";
+        }
+    });
 
-  // ──────────────────────────────────────
-  // 완료 버튼
-  // ──────────────────────────────────────
-  if (completeBtn) {
+    // ──────────────────────────────────────
+    // 4. 전화번호 및 인증
+    // ──────────────────────────────────────
+    const phoneInput = document.querySelectorAll(".input-group")[5].querySelector("input");
+    const authSendBtn = document.querySelector(".authBtn");
+    const phoneError = document.querySelectorAll(".input-group")[5].querySelector(".error-msg");
+
+    const authGroup = document.querySelectorAll(".input-group")[6];
+    const authInput = authGroup.querySelector("input");
+    const authConfirmBtn = authGroup.querySelectorAll("button")[0];
+    const phoneChangeBtn = authGroup.querySelectorAll("button")[1];
+    const authError = authGroup.querySelector(".error-msg");
+
+    authSendBtn.addEventListener("click", () => {
+        if (!phoneInput.value) {
+            phoneError.style.color = "red";
+            phoneError.textContent = "전화번호를 입력해주세요.";
+            return;
+        }
+        alert("인증번호가 발송되었습니다.");
+        isPhoneAuthSent = true;
+        phoneError.textContent = "";
+    });
+
+    authConfirmBtn.addEventListener("click", () => {
+        if (!isPhoneAuthSent) {
+            authError.style.color = "red";
+            authError.textContent = "인증번호를 먼저 발송해주세요.";
+            return;
+        }
+        if (authInput.value === VALID_AUTH_CODE) {
+            authError.textContent = "인증에 성공하였습니다.";
+            authError.style.color = "blue";
+            isPhoneVerified = true;
+        } else {
+            authError.style.color = "red";
+            authError.textContent = "인증번호가 일치하지 않습니다.";
+            isPhoneVerified = false;
+        }
+    });
+
+    phoneChangeBtn.addEventListener("click", () => {
+        if (!isPhoneVerified) {
+            authError.style.color = "red";
+            authError.textContent = "인증번호 확인 절차가 필요합니다.";
+        } else {
+            alert("전화번호가 성공적으로 변경되었습니다.");
+            authError.textContent = "";
+        }
+    });
+
+    // ──────────────────────────────────────
+    // 5. 성별 변경 (추가된 부분)
+    // ──────────────────────────────────────
+    const genderGroup = document.querySelectorAll(".input-group")[7];
+    const genderChangeBtn = genderGroup.querySelector(".change");
+
+    genderChangeBtn.addEventListener("click", () => {
+        const selectedGender = genderGroup.querySelector('input[name="role"]:checked');
+        if (selectedGender) {
+            alert("성별이 성공적으로 변경되었습니다.");
+        }
+    });
+
+    // ──────────────────────────────────────
+    // 6. 완료 버튼 (최종 페이지 이동)
+    // ──────────────────────────────────────
     completeBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (!photoAttached) {
-        if (photoErrorEl) photoErrorEl.textContent = "사진 첨부가 필요합니다.";
-        updateCompleteBtn();
-        return;
-      }
-      if (!completeBtn.disabled) {
-        // form.submit();
-        window.location.href = '/frontend/html/user/mentor/myPage/myPage.html';
-      }
-    });
-  }
+        if (!isPhotoAttached) {
+            photoError.style.color = "red";
+            photoError.textContent = "사진 첨부는 필수입니다.";
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
 
+        // 모든 로직 통과 시 이동
+        window.location.href = '/frontend/html/user/mentee/myPage/myPage.html';
+    });
 });
