@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>게시판 관리 - 멘티 게시글</title>
-  <link rel="stylesheet" href="./../../../../assets/css/admin/adminBoard/menteeBoard/boardDetail.css" />
+  <link rel="stylesheet" href="/frontend/assets/css/admin/adminBoard/menteeBoard/boardDetail.css" />
 </head>
 <body>
 
@@ -32,7 +32,7 @@
     <!-- 작성자 + 삭제 -->
     <div class="detail-author-row">
       <span class="detail-author">작성자 닉네임</span>
-      <button class="btn btn-red" id="btnDelete">삭제</button>
+      <div id="postActions" style="display:flex; gap:12px;"></div>
     </div>
 
     <!-- 댓글 -->
@@ -40,15 +40,16 @@
   </div>
 
 <script>
-  fetch("/header/adminHeader.html")
+  fetch("/frontend/header/adminHeader.html")
     .then(res => res.text())
     .then(html => {
       document.getElementById("header-wrap").innerHTML = html;
       const s = document.createElement("script");
-      s.src = "/header/adminHeader.js";
+      s.src = "/frontend/assets/js/adminHeader.js";
       document.body.appendChild(s);
     });
 </script>
-  <script src="./../../../../assets/js/admin/adminBoard/menteeBoard/boardDetail.js"></script>
+  <script src="/frontend/assets/js/admin/adminBoard/boardData.js"></script>
+  <script src="/frontend/assets/js/admin/adminBoard/menteeBoard/boardDetail.js"></script>
 </body>
 </html>

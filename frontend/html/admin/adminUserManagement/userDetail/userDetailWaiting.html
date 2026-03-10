@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>유저 상세 - 대기</title>
-  <link rel="stylesheet" href="./../../../../assets/css/admin/adminUserManagement/userDetail/userModal.css" />
+  <link rel="stylesheet" href="/frontend/assets/css/admin/adminUserManagement/userDetail/userModal.css" />
 </head>
 <body>
 
@@ -17,7 +17,7 @@
       <div class="profile-col">
         <div class="profile-avatar">
           <div class="profile-avatar">
-            <img src="./../../../../assets/img/admin/유저 아이콘.png" alt="유저 아이콘" style="width:90px;height:90px;object-fit:contain;" />
+            <img src="/frontend/assets/img/admin/유저 아이콘.png" alt="유저 아이콘" style="width:90px;height:90px;object-fit:contain;" />
           </div>
         </div>
         <button class="btn-survey" id="btnSurvey">설문조사 확인</button>
@@ -135,15 +135,15 @@
   </div>
 
   <script>
-    fetch("/header/adminHeader.html")
+    fetch("/frontend/header/adminHeader.html")
       .then(res => res.text())
       .then(html => {
         document.getElementById("header-wrap").innerHTML = html;
         const s = document.createElement("script");
-        s.src = "/header/adminHeader.js";
+        s.src = "/frontend/header/adminHeader.js";
         document.body.appendChild(s);
       });
   </script>
-  <script src="./../../../../assets/js/admin/adminUserManagement/userDetail/userDetailWaiting.js"></script>
+  <script src="/frontend/assets/js/admin/adminUserManagement/userDetail/userDetailWaiting.js"></script>
 </body>
 </html>

@@ -1,53 +1,63 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  let currentPage = 1;
+  let currentType = "전체";
+
   /* ========================
      목록 렌더
   ======================== */
   const noticeTableBody = document.getElementById("noticeTableBody");
-  if (noticeTableBody) {
-    const notices = Array.from({ length: 10 }, (_, i) => ({
-      no: i + 1,
-      title: "게시글제목",
-      date: "작성날짜 작성시간",
-      views: 0,
-    }));
 
+  function renderTable(page) {
+    if (!noticeTableBody) return;
+    const notices = NoticeStore.getPage(page, currentType);
     noticeTableBody.innerHTML = notices.map(n => `
-      <div class="notice-table-row" onclick="location.href='noticeDetail.html'">
-        <div class="col col-no">${n.no}</div>
-        <div class="col col-title">${n.title}</div>
-        <div class="col col-date text-muted">${n.date}</div>
+      <div class="notice-table-row" data-id="${n.id}" style="cursor:pointer;">
+        <div class="col col-no">${n.id}</div>
+        <div class="col col-title">[${n.type}] ${n.title}</div>
+        <div class="col col-date text-muted">${n.date} ${n.time}</div>
         <div class="col col-views text-muted">조회수 ${n.views}</div>
       </div>
     `).join("");
+
+    noticeTableBody.querySelectorAll(".notice-table-row").forEach(row => {
+      row.addEventListener("click", () => {
+        sessionStorage.setItem("currentNoticeId", row.dataset.id);
+        location.href = "noticeDetail.html";
+      });
+    });
   }
 
   /* ========================
      페이지네이션
   ======================== */
   const pagination = document.getElementById("pagination");
-  if (pagination) {
-    const TOTAL_PAGES = 10;
+
+  function renderPagination() {
+    if (!pagination) return;
+    const TOTAL_PAGES = NoticeStore.totalPages(currentType);
     const GROUP_SIZE = 5;
-    let currentPage = 1;
+    const groupStart = Math.floor((currentPage - 1) / GROUP_SIZE) * GROUP_SIZE + 1;
+    const groupEnd = Math.min(groupStart + GROUP_SIZE - 1, TOTAL_PAGES);
 
-    function renderPagination() {
-      const groupStart = Math.floor((currentPage - 1) / GROUP_SIZE) * GROUP_SIZE + 1;
-      const groupEnd = Math.min(groupStart + GROUP_SIZE - 1, TOTAL_PAGES);
+    const showPrev = currentPage > 1;
+    const showNext = groupEnd < TOTAL_PAGES;
 
-      let html = "";
-      html += `<button class="page-btn" data-action="prev" ${currentPage === 1 ? "disabled" : ""}>&lt;</button>`;
-      for (let i = groupStart; i <= groupEnd; i++) {
-        html += `<button class="page-btn ${i === currentPage ? "is-active" : ""}" data-page="${i}">${i}</button>`;
-      }
-      html += `<button class="page-btn" data-action="next" ${currentPage === TOTAL_PAGES ? "disabled" : ""}>&gt;</button>`;
-      pagination.innerHTML = html;
+    let html = "";
+    if (showPrev) html += `<button class="page-btn" data-action="prev">&lt;</button>`;
+    for (let i = groupStart; i <= groupEnd; i++) {
+      html += `<button class="page-btn ${i === currentPage ? "is-active" : ""}" data-page="${i}">${i}</button>`;
     }
+    if (showNext) html += `<button class="page-btn" data-action="next">&gt;</button>`;
+    pagination.innerHTML = html;
+  }
 
+  if (pagination) {
     pagination.addEventListener("click", e => {
       const btn = e.target.closest(".page-btn");
-      if (!btn || btn.disabled) return;
-
+      if (!btn) return;
+      const TOTAL_PAGES = NoticeStore.totalPages(currentType);
+      const GROUP_SIZE = 5;
       const groupStart = Math.floor((currentPage - 1) / GROUP_SIZE) * GROUP_SIZE + 1;
       const groupEnd = Math.min(groupStart + GROUP_SIZE - 1, TOTAL_PAGES);
 
@@ -55,10 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
       else if (btn.dataset.action === "next") currentPage = groupEnd + 1;
       else if (btn.dataset.page) currentPage = parseInt(btn.dataset.page);
 
+      renderTable(currentPage);
       renderPagination();
     });
-
-    renderPagination();
   }
 
   /* ========================
@@ -74,6 +83,15 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!btnType.contains(e.target)) typeDropdown.style.display = "none";
     });
   }
+
+  window.selectType = function(type) {
+    currentType = type;
+    currentPage = 1;
+    document.getElementById("btnType").textContent = type + " ▼";
+    document.getElementById("typeDropdown").style.display = "none";
+    renderTable(currentPage);
+    renderPagination();
+  };
 
   /* ========================
      등록 버튼
@@ -91,13 +109,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnSearch = document.getElementById("btnSearch");
   if (btnSearch) {
     btnSearch.addEventListener("click", () => {
-      alert("조회 기능은 백엔드 연동 후 동작합니다.");
+      alert("날짜 조회 기능은 백엔드 연동 후 동작합니다.");
     });
   }
 
-});
+  renderTable(currentPage);
+  renderPagination();
 
-function selectType(type) {
-  document.getElementById("btnType").textContent = type + " ▼";
-  document.getElementById("typeDropdown").style.display = "none";
-}
+});

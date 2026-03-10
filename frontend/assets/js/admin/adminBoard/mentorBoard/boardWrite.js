@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const path = window.location.pathname;
   const isMentor = path.includes("mentorBoard");
-  const boardType = isMentor ? "mentor" : "mentee";
+  const boardType = sessionStorage.getItem("currentBoardType") || (isMentor ? "mentor" : "mentee");
 
   /* ========================
      등록 폼 submit
@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const content = document.getElementById("inputContent")?.value.trim();
       if (!title) { alert("제목을 입력해주세요."); return; }
       if (!content) { alert("내용을 입력해주세요."); return; }
-      // 백엔드 연동 시 fetch("/api/board", { method: "POST", ... }) 로 교체
+      const newId = BoardStore.addPost(boardType, { title, content });
+      sessionStorage.setItem("currentPostId", newId);
       alert("등록되었습니다.");
       location.href = `${boardType}BoardList.html`;
     });
