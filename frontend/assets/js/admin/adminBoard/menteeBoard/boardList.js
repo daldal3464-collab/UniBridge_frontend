@@ -22,53 +22,62 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ========================
      목록 렌더
   ======================== */
+  let currentPage = 1;
   const boardTableBody = document.getElementById("boardTableBody");
-  if (boardTableBody) {
-    const posts = Array.from({ length: 10 }, (_, i) => ({
-      no: 10 - i,
-      title: "게시글제목",
-      author: "작성자",
-      date: "작성날짜 작성시간",
-      views: 0,
-    }));
 
+  function renderTable(page) {
+    if (!boardTableBody) return;
+    const posts = BoardStore.getPage(boardType, page);
     boardTableBody.innerHTML = posts.map(p => `
-      <div class="board-table-row" onclick="location.href='${boardType}BoardDetail.html'">
-        <div class="col col-no">${p.no}</div>
+      <div class="board-table-row" data-id="${p.id}" style="cursor:pointer;">
+        <div class="col col-no">${p.id}</div>
         <div class="col col-title">${p.title}</div>
         <div class="col col-author text-muted">${p.author}</div>
-        <div class="col col-date text-muted">${p.date}</div>
+        <div class="col col-date text-muted">${p.date} ${p.time}</div>
         <div class="col col-views text-muted">조회수 ${p.views}</div>
       </div>
     `).join("");
+
+    boardTableBody.querySelectorAll(".board-table-row").forEach(row => {
+      row.addEventListener("click", () => {
+        const id = parseInt(row.dataset.id);
+        sessionStorage.setItem("currentPostId", id);
+        sessionStorage.setItem("currentBoardType", boardType);
+        location.href = `${boardType}BoardDetail.html`;
+      });
+    });
   }
 
   /* ========================
      페이지네이션
   ======================== */
   const pagination = document.getElementById("pagination");
-  if (pagination) {
-    const TOTAL_PAGES = 10;
+
+  function renderPagination() {
+    if (!pagination) return;
+    const TOTAL_PAGES = BoardStore.totalPages(boardType);
     const GROUP_SIZE = 5;
-    let currentPage = 1;
+    const groupStart = Math.floor((currentPage - 1) / GROUP_SIZE) * GROUP_SIZE + 1;
+    const groupEnd = Math.min(groupStart + GROUP_SIZE - 1, TOTAL_PAGES);
 
-    function renderPagination() {
-      const groupStart = Math.floor((currentPage - 1) / GROUP_SIZE) * GROUP_SIZE + 1;
-      const groupEnd = Math.min(groupStart + GROUP_SIZE - 1, TOTAL_PAGES);
+    const showPrev = currentPage > 1;
+    const showNext = groupEnd < TOTAL_PAGES;
 
-      let html = "";
-      html += `<button class="page-btn" data-action="prev" ${currentPage === 1 ? "disabled" : ""}>&lt;</button>`;
-      for (let i = groupStart; i <= groupEnd; i++) {
-        html += `<button class="page-btn ${i === currentPage ? "is-active" : ""}" data-page="${i}">${i}</button>`;
-      }
-      html += `<button class="page-btn" data-action="next" ${currentPage === TOTAL_PAGES ? "disabled" : ""}>&gt;</button>`;
-      pagination.innerHTML = html;
+    let html = "";
+    if (showPrev) html += `<button class="page-btn" data-action="prev">&lt;</button>`;
+    for (let i = groupStart; i <= groupEnd; i++) {
+      html += `<button class="page-btn ${i === currentPage ? "is-active" : ""}" data-page="${i}">${i}</button>`;
     }
+    if (showNext) html += `<button class="page-btn" data-action="next">&gt;</button>`;
+    pagination.innerHTML = html;
+  }
 
+  if (pagination) {
     pagination.addEventListener("click", e => {
       const btn = e.target.closest(".page-btn");
-      if (!btn || btn.disabled) return;
-
+      if (!btn) return;
+      const TOTAL_PAGES = BoardStore.totalPages(boardType);
+      const GROUP_SIZE = 5;
       const groupStart = Math.floor((currentPage - 1) / GROUP_SIZE) * GROUP_SIZE + 1;
       const groupEnd = Math.min(groupStart + GROUP_SIZE - 1, TOTAL_PAGES);
 
@@ -76,11 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
       else if (btn.dataset.action === "next") currentPage = groupEnd + 1;
       else if (btn.dataset.page) currentPage = parseInt(btn.dataset.page);
 
+      renderTable(currentPage);
       renderPagination();
     });
-
-    renderPagination();
   }
+
+  renderTable(currentPage);
+  renderPagination();
 
   /* ========================
      작성 버튼

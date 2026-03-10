@@ -5,36 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>공지사항 관리</title>
 
-  <link rel="stylesheet" href="./../../../assets/css/admin/adminNotice/noticeList.css" />
-  <!-- <style>
-    /* 종류 드롭다운 */
-    .type-wrap { position: relative; }
-    #typeDropdown {
-      display: none;
-      position: absolute;
-      top: calc(100% + 6px);
-      left: 0;
-      background: #fff;
-      border: 1.5px solid #3a3a3a;
-      border-radius: 10px;
-      min-width: 120px;
-      z-index: 100;
-      overflow: hidden;
-    }
-    #typeDropdown button {
-      display: block;
-      width: 100%;
-      padding: 12px 18px;
-      border: none;
-      background: none;
-      font-family: "NanumSquareRound", sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      text-align: left;
-      cursor: pointer;
-    }
-    #typeDropdown button:hover { background: #f5f5f5; }
-  </style> -->
+  <link rel="stylesheet" href="/frontend/assets/css/admin/adminNotice/noticeList.css" />
+
 </head>
 <body>
 
@@ -90,16 +62,17 @@
   </script>
 
   <script>
-  fetch("/header/adminHeader.html")
+  fetch("/frontend/header/adminHeader.html")
     .then(res => res.text())
     .then(html => {
       document.getElementById("header-wrap").innerHTML = html;
       const s = document.createElement("script");
-      s.src = "/header/adminHeader.js";
+      s.src = "/frontend/header/adminHeader.js";
       document.body.appendChild(s);
     });
   </script>
 
-  <script src="./../../../assets/js/admin/adminNotice/noticeList.js"></script>
+  <script src="/frontend/assets/js/admin/adminNotice/noticeData.js"></script>
+  <script src="/frontend/assets/js/admin/adminNotice/noticeList.js"></script>
 </body>
 </html>

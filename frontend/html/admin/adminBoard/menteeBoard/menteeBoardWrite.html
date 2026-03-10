@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>게시판 관리 - 게시글 작성</title>
 
-  <link rel="stylesheet" href="./../../../../assets/css/admin/adminBoard/menteeBoard/boardWrite.css" />
+  <link rel="stylesheet" href="/frontend/assets/css/admin/adminBoard/menteeBoard/boardWrite.css" />
 </head>
 <body>
 
@@ -46,15 +46,16 @@
 </form>
 
 <script>
-  fetch("/header/adminHeader.html")
+  fetch("/frontend/header/adminHeader.html")
     .then(res => res.text())
     .then(html => {
       document.getElementById("header-wrap").innerHTML = html;
       const s = document.createElement("script");
-      s.src = "/header/adminHeader.js";
+      s.src = "/frontend/header/adminHeader.js";
       document.body.appendChild(s);
     });
 </script>
-  <script src="./../../../../assets/js/admin/adminBoard/menteeBoard/boardWrite.js"></script>
+  <script src="/frontend/assets/js/admin/adminBoard/boardData.js"></script>
+  <script src="/frontend/assets/js/admin/adminBoard/menteeBoard/boardWrite.js"></script>
 </body>
 </html>

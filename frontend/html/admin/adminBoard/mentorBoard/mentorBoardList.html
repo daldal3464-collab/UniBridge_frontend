@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>게시판 관리 - 멘토</title>
-
-  <link rel="stylesheet" href="./../../../../assets/css/admin/adminBoard/mentorBoard/boardList.css" />
+  <title>게시판 관리 - 멘티</title>
+  <link rel="stylesheet" href="/frontend/assets/css/admin/adminBoard/menteeBoard/boardList.css" />
 </head>
 <body>
 
@@ -47,16 +46,20 @@
     <div class="pagination" id="pagination"></div>
   </div>
 
+
+  <div id="header-wrap"></div>
+
 <script>
-  fetch("/header/adminHeader.html")
+  fetch("/frontend/header/adminHeader.html")
     .then(res => res.text())
     .then(html => {
       document.getElementById("header-wrap").innerHTML = html;
       const s = document.createElement("script");
-      s.src = "/header/adminHeader.js";
+      s.src = "/frontend/header/adminHeader.js";
       document.body.appendChild(s);
     });
 </script>
-  <script src="./../../../../assets/js/admin/adminBoard/mentorBoard/boardList.js"></script>
+  <script src="/frontend/assets/js/admin/adminBoard/boardData.js"></script>
+  <script src="/frontend/assets/js/admin/adminBoard/menteeBoard/boardList.js"></script>
 </body>
 </html>
