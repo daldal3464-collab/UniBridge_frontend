@@ -1,6 +1,6 @@
 @font-face {
   font-family: "NanumSquareRound";
-  src: url("../../../fonts/nanum-square-round/NanumSquareRoundEB.ttf") format("truetype");
+  src: url("/frontend/assets/fonts/nanum-square-round/NanumSquareRoundEB.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
