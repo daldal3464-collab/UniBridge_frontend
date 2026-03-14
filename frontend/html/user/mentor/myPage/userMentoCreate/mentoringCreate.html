@@ -10,31 +10,32 @@
   <link rel="stylesheet" href="/frontend/assets/css/header.css">
   <link rel="stylesheet" href="/frontend/assets/css/footer.css">
   <script defer src="/frontend/assets/js/header.js"></script>
-  <script src="/frontend/assets/js/footer.js"></script>
+  <script defer src="/frontend/assets/js/footer.js"></script>
 </head>
 <body>
   <header>
     <div id="headerContainer"></div>
   </header>
-  <main>
-    <aside id="sidebarArea">
-      <div class="myPageTitle">마이페이지</div>
-      <ul>
-        <li><a href="/frontend/html/user/mentor/myPage/myPage.html">계정 관리</a></li>
-        <li><a href="/frontend/html/user/mentor/myPage/userSurvey/userSurvey.html">설문 조사</a></li>
-        <li><a href="/frontend/html/user/mentor/myPage/userMatching/userMatching.html">매칭 정보</a></li>
-        <li><a href="" class="active">멘토링</a></li>
-        <li><a href="/frontend/html/user/mentor/myPage/userDelete/userDelete.html">회원 탈퇴</a></li>
-      </ul>
+  
+  <div class="mainContainer">
+    <aside>
+        <div class="myPageTitle">마이페이지</div>
+        <ul>
+            <li><a href="/frontend/html/user/mentor/myPage/myPage.html">계정 관리</a></li>
+            <li><a href="/frontend/html/user/mentor/myPage/userSurvey/userSurvey.html">설문 조사</a></li>
+            <li><a href="/frontend/html/user/mentor/myPage/userMatching/userMatching.html">매칭 정보</a></li>
+            <li><a href="/frontend/html/user/mentor/myPage/userMentoCreate/mentoringCreate.html" class="active">멘토링</a></li>
+            <li><a href="/frontend/html/user/mentor/myPage/userDelete/userDelete.html">회원 탈퇴</a></li>
+        </ul>
     </aside>
-    <form method="get" action="" >
-      <div id = contents>
-        <div id="contentsHeader">
-          <div class="mentoringTitle">
-            <img src="/frontend/assets/img/user/userMyPageImg/userMentoring.jpg" alt="멘토링 관리 아이콘">
-            <div class="mentoringTitleText">멘토링 관리</div>
-          </div>
-        </div>
+
+    <main>
+      <div class="userManageTitle">
+          <img src="/frontend/assets/img/user/userMyPageImg/userMentoring.jpg" alt="프로필 아이콘">
+          <div class="title">멘토링 관리</div>
+      </div>
+
+      <form action="" method="get">  
         <div id = contentsMain>
           <div id = mentoringBackground>
             <div id = mentoringMain>
@@ -43,6 +44,7 @@
                   <div class = "title">
                     <span>학습 주제 및 목표</span>
                   </div>
+
                   <div class="subject">
                     <label for="mentoringSubject">학습 과목</label>
                     <select id="mentoringSubject" name = "mentoringSubject">
@@ -58,17 +60,20 @@
                     </select>
                     <div class="error">과목명을 선택해주세요.</div>
                   </div>
+
                   <div class="subject">
                     <label for="mentoringTitle">멘토링 주제</label>
                     <input type="text" id="mentoringTitle" name="mentoringTitle" placeholder="제목을 입력해주세요.">
                     <div class="error">제목을 입력해주세요.</div>
                   </div>
+
                   <div id = purpose>
                     <label for="mentoringPurpose">멘토링 목적</label> 
                     <textarea id="mentoringPurpose" name="mentoringPurpose" placeholder="내용을 입력해주세요."></textarea>
                     <div class="error">내용을 입력해주세요.</div>
                   </div>
                 </div>
+                
                 <div id = curriculum>
                   <div id = "text">
                     <div>
@@ -97,9 +102,9 @@
             </div>
           </div>
         </div>
-      </div>
-    </form>
-  </main>
+      </form>
+    </main>
+  </div>
   <div class="footerContainer"></div>  
 </body>
 </html>

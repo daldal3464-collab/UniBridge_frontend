@@ -1,11 +1,15 @@
 *{
   margin : 0px;
   padding : 0px;
-  font-family: NanumSquareRound
+}
+
+#headerContainer{
+  width:100%;
+  height: 57px;
 }
 
 main{
-  padding-top : 100px;
+  font-family: NanumSquareRound
 }
 
 nav ul{
@@ -13,20 +17,21 @@ nav ul{
   display : flex;
 }
 
-a:link, a:visited{
+#category a:link, #category a:visited{
   text-decoration: none;
   color : #94A3B8;
 }
 
-a:hover{
+#category a:hover{
   color : black;
 }
 
-#nowCategory{
+#category #nowCategory{
   color : red;
 }
 
-nav, hr{
+
+#category, hr{
   margin : 0px 90px;
 }
 
@@ -44,7 +49,7 @@ nav, hr{
   padding : 10px;
 }
 
-nav ul li{
+#category ul li{
   padding: 20px 12px 30px 12px;
   font-size:20px;
 }

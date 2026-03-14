@@ -1,10 +1,3 @@
-/**
- * 멘토 카테고리 검색
- * - 카테고리 클릭 시 해당 과목 멘토만 필터링
- * - 페이지네이션과 연동 (전역 pagination 인스턴스 사용)
- * - 'mentorsRendered' 커스텀 이벤트로 페이지네이션에 필터된 데이터 전달
- */
-
 document.addEventListener('DOMContentLoaded', () => {
   const categoryLinks = document.querySelectorAll('nav ul li a');
 
