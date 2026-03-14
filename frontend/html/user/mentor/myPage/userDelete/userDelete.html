@@ -14,7 +14,7 @@
     
     <div id="headerContainer"></div>
 
-    <div class="main-container">
+    <div class="mainContainer">
         <aside>
             <div class="myPageTitle">마이페이지</div>
             <ul>
@@ -26,7 +26,7 @@
             </ul>
         </aside>
         <main>
-            <div class="userManage-title">
+            <div class="userManageTitle">
                 <img src="/frontend/assets/img/user/userProfile/userDelete.png" alt="회원탈퇴 아이콘">
                 <div class="title">회원탈퇴</div>
             </div>
@@ -39,8 +39,8 @@
             </div>
             <div class="userInputBox">
                 <form id="delete" action="">
-                    <div class="input-group-container">
-                        <div class="input-group">
+                    <div class="inputGroup-container">
+                        <div class="inputGroup">
                             <label>아이디</label>
                             <input type="text" id="userId" class="userInput">
                             <div class="spacer"></div>
@@ -48,8 +48,8 @@
                         <div class="error-msg" id="login-error"></div>
                     </div>
                     
-                    <div class="input-group-container">
-                        <div class="input-group">
+                    <div class="inputGroup-container">
+                        <div class="inputGroup">
                             <label>비밀번호</label>
                             <input type="password" id="userPw" class="userInput">
                             <div class="spacer"></div>
@@ -57,17 +57,17 @@
                         <div class="spar" id="space"></div>
                     </div>
 
-                    <div class="input-group-container">
-                        <div class="input-group">
+                    <div class="inputGroup-container">
+                        <div class="inputGroup">
                             <label>전화번호</label>
-                            <input type="tel" id="userPhone" class="userInput">
+                            <input type="text" id="userPhone" class="userInput">
                             <button type="button" class="duplication" id="sendSms">인증 번호 전송</button>
                         </div>
                         <div class="spar" id="space"></div>
                     </div>
 
-                    <div class="input-group-container">
-                        <div class="input-group">
+                    <div class="inputGroup-container">
+                        <div class="inputGroup">
                             <label>인증번호</label>
                             <input type="text" id="authCode" class="userInput">
                             <button type="button" class="duplication" id="verifySms">인증 확인</button>
@@ -75,7 +75,7 @@
                         <div class="error-msg" id="auth-error"></div>
                     </div>
 
-                    <button type="submit" class="userDelete" id="submitBtn" disabled>탈퇴 신청</button>
+                    <button type="submit" class="userDeleteBtn" id="submitBtn" disabled>탈퇴 신청</button>
                 </form>
 
             </div>

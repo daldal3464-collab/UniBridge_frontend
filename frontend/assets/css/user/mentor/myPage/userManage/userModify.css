@@ -11,7 +11,7 @@ body {
 }
 
 /* 기본 레이아웃 구성 */
-.main-container {
+.mainContainer {
     display: flex;
     margin-top: 40px;
     gap: 30px;
@@ -118,7 +118,7 @@ main {
 }
 
 /* 유저 정보 카드 (사진 + 텍스트 가로 배치) */
-.user {
+.userMain {
     display: flex;
     align-items: center;
     width: 80%;
@@ -171,7 +171,7 @@ main {
     justify-content: center;
 }
 
-.input-group {
+.inputGroup {
     display: flex;           /* 가로 나열 */
     align-items: center;     /* 세로축 중앙 */
     margin-bottom: 30px;

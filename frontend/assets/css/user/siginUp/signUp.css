@@ -39,13 +39,13 @@ main{
     max-height: 800px;
 }
 
-.signUpText {
+.signUpTitle {
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 30px;     /* 제목과 입력창 사이 간격 */
 }
 
-.input-group {
+.inputGroup {
     display: flex;
     align-items: center;
     flex-wrap: wrap; 

@@ -11,7 +11,7 @@ body {
 }
 
 /* 기본 레이아웃 구성 */
-.main-container {
+.mainContainer {
     display: flex;
     margin-top: 40px;
     gap: 30px;
@@ -192,7 +192,7 @@ main {
 }
 
 /* 모달 박스 */
-.modal-content {
+.modalContent {
     background-color: white;
     margin: 3% auto; /* 상단 여백 및 가로 중앙 정렬 */
     padding: 30px;

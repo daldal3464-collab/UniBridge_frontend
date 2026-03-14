@@ -154,7 +154,7 @@ main {
     justify-content: center;
 }
 
-.input-group {
+.inputGroup {
     display: flex;
     align-items: center;
     margin-bottom: 5px; /* 에러 메시지와의 간격 */
@@ -194,7 +194,7 @@ input {
 }
 
 /* 수정 버튼 우측 하단 absolute */
-.userDelete {
+.userDeleteBtn {
     width: 100%;
     padding: 10px 24px;
     border: 1px solid black;
@@ -226,7 +226,7 @@ input {
 }
 
 /* 탈퇴 버튼 비활성화 상태 */
-.userDelete:disabled {
+.userDeleteBtn:disabled {
     background-color: #f5f5f5;
     color: #ccc;
     border-color: #ccc;
@@ -234,7 +234,7 @@ input {
 }
 
 /* 탈퇴 버튼 활성화 상태 */
-.userDelete:not(:disabled) {
+.userDeleteBtn:not(:disabled) {
     background-color: white;
     border: 1px solid black;
     color: black;

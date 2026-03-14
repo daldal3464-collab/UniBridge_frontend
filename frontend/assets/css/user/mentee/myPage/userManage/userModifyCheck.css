@@ -11,7 +11,7 @@ body {
 }
 
 /* 기본 레이아웃 구성 */
-.main-container {
+.mainContainer {
     display: flex;
     margin-top: 40px;
     gap: 30px;
@@ -118,7 +118,7 @@ main {
 }
 
 /* 유저 입력 박스 */
-.user {
+.userMain {
     display: flex;
     align-items: center;
     width: 60%;
@@ -144,7 +144,7 @@ main {
     /* margin-left: 150px; */
 }
 
-.input-group {
+.inputGroup {
     display: flex;           /* 가로 나열 */
     align-items: center;     /* 세로축 중앙 */
     margin-bottom: 20px;
@@ -185,7 +185,7 @@ input {
 }
 
 /* 수정 버튼 우측 하단 absolute */
-.userModify {
+.userModifyBtn {
     position: absolute;
     bottom: 70px;
     right: 145px;
@@ -200,6 +200,6 @@ input {
     transition: background 0.2s;
 }
 
-.userModify:hover {
+.userModifyBtn:hover {
     background-color: #c7d2fe;
 }

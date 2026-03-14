@@ -42,13 +42,13 @@ main{
     min-width: 600px;        /* 최소 너비 지정 */
 }
 
-.loginText {
+.loginTitle {
     font-size: 50px;
     font-weight: 700;
     margin-bottom: 40px;     /* 제목과 입력창 사이 간격 */
 }
 
-.input-group {
+.inputGroup {
     display: flex;           /* 가로 나열 */
     align-items: center;     /* 세로축 중앙 */
     margin-bottom: 20px;

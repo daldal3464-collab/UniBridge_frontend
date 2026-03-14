@@ -11,7 +11,7 @@ body {
 }
 
 /* 기본 레이아웃 구성 */
-.main-container {
+.mainContainer {
     display: flex;
     margin-top: 40px;
     gap: 30px;
@@ -96,7 +96,7 @@ main {
 }
 
 /* 제목 부분 (아이콘 + 텍스트) */
-.userManage-title {
+.userManageTitle {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -104,13 +104,13 @@ main {
     margin-left: 145px;
 }
 
-.userManage-title img {
+.userManageTitle img {
     margin-top: 30px;
     width: 36px;
     height: 36px;
 }
 
-.userManage-title .title {
+.userManageTitle .title {
     margin-top: 30px;
     font-size: 30px;
     font-weight: 500;
@@ -118,7 +118,7 @@ main {
 }
 
 /* 유저 정보 카드 (사진 + 텍스트 가로 배치) */
-.user {
+.userMain {
     display: flex;
     align-items: center;
     width: 80%;
@@ -134,7 +134,7 @@ main {
 }
 
 /* 유저 프로필 이미지 */
-.user > img {
+.userMain > img {
     width: 300px;
     height: 360px;
     object-fit: cover;
@@ -176,7 +176,7 @@ main {
 }
 
 /* 수정 버튼 우측 하단 absolute */
-.userModify {
+.userModifyBtn {
     position: absolute;
     right: 145px;
     padding: 10px 24px;
@@ -190,7 +190,7 @@ main {
     transition: background 0.2s;
 }
 
-.userModify:hover {
+.userModifyBtn:hover {
     background-color: #c7d2fe;
 }
 

@@ -171,7 +171,7 @@ main {
     justify-content: center;
 }
 
-.input-group {
+.inputGroup {
     display: flex;           /* 가로 나열 */
     align-items: center;     /* 세로축 중앙 */
     margin-bottom: 30px;
@@ -266,7 +266,7 @@ input {
 }
 
 /* 수정 버튼 우측 하단 absolute */
-.userModify {
+.userModifyBtn {
     position: absolute;
     bottom: 15px;
     right: 145px;
@@ -281,7 +281,7 @@ input {
     transition: background 0.2s;
 }
 
-.userModify:hover {
+.userModifyBtn:hover {
     background-color: #c7d2fe;
 }
 
